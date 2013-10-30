@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>IIIF | International Image Interoperability Framework &rsaquo; Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,500' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="header-container">
+      <header class="wrapper clearfix">
+        <a class="title" title="IIIF : International Image Interoperability Framework" href="index.html">Home</a>
+        <nav>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a class="is-selected" href="technical-details.html">Technical Details</a></li>
+            <li><a href="apps-demos.html">Apps &amp; Demos</a></li>
+            <li><a href="community.html">Community</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <div class="main-container">
+      <div class="sub-pages technical-details clearfix">
+        <article>
+          <header>
+            <div class="wrapper">
+              <h1>IIIF Quick Start Guide</h1>
+            </div>
+          </header>
+
+          <section class="wrapper section-quick-links">
+            <a href="http://www-sul.stanford.edu/iiif/image-api/1.1/" target="_blank">
+              <input type="button" class="button-turquoise" value="IIIF Image API 1.1">
+            </a>
+            <a href="http://www.shared-canvas.org/datamodel/iiif/metadata-api.html" target="_blank">
+              <input type="button" class="button-turquoise" value="IIIF Metadata API 1.0">
+            </a>
+          </section>
+
+          <section class="wrapper">
+            <p>
+              This page is a quick-start guide for image repository managers and engineers who are interested in making
+              their image repository interoperable, or just experimenting with IIIF.
+            </p>
+            <p>
+              The basic steps to getting started with IIIF are:
+            </p>
+            <ol>
+              <li>Deploy an image server that supports the <a href="http://www-sul.stanford.edu/iiif/image-api/1.1/" target="_blank">IIIF Image API v1.1</a></li>
+              <li>Publish metadata about your image-based objects that complies to <a href="http://www.shared-canvas.org/datamodel/iiif/metadata-api.html" target="_blank">IIIF Metadata API v1.0</a></li>
+              <li>Deploy and integrate software that allows you to discover and display IIIF-compliant image resources</li>
+            </ol>
+          </section>
+
+          <section class="step wrapper">
+            <span class="step-box">Step 1</span>
+            <h2>Deploy an image server</h2>
+            <p>
+              In this step you will either deploy an image server for the first time, or adapt your existing image server to
+              support the IIIF.  In either case your goal is to deploy an image server that fully supports delivery of images
+              via URL’s as specified in the <a href="http://www-sul.stanford.edu/iiif/image-api/1.1/" target="_blank">IIIF Image API v1.1</a>.
+            </p>
+
+            <p class="question">
+              Just experimenting or trying to set up an interoperable image server for the first time?  Try one of these:
+            </p>
+            <p>
+              <ul>
+                <li>
+                  <a href="https://github.com/pulibrary/loris" target="_blank">Loris</a> is an open source,  Pyton-based image
+                  server that supports the IIIF Image API ver 1.1.  It supports JPEG, JPEG2000 and TIFF source images.
+                </li>
+                <li>
+                  <a href="http://iipimage.sourceforge.net/documentation/server/" target="_blank">IIPImage Server</a> is an open
+                  source Fast CGI module written in C++ that is designed to be embedded within a host web server such as Apache,
+                  Lighttpd, MyServer or Nginx. It supports TIFF and JPEG2000 source images. The IIIF compatible version of IIPImage
+                  Server can be found at <a href="https://github.com/ruven/iipsrv/tree/iiif" target="_blank">this branch</a>.
+                </li>
+              </ul>
+            </p>
+
+            <p class="question">
+              Do you currently have an image server based on djatoka, Aware, Luratech or FSI?
+            </p>
+            <p>
+              These are common image server technologies that drive many image repositories in the cultural heritage community, and
+              chances are that someone in the IIIF community has already built a shim or translator to make these IIIF compatible.
+              Email the <a href="https://groups.google.com/forum/#!forum/iiif-discuss" target="_blank">IIIF Discuss Google Group</a>
+              to find out. We will add documentation and pointers to these translators in the future.  For example:
+              <ul>
+                <li>
+                  This <a href="https://github.com/jronallo/djatoka" target="_blank">Ruby on Rails</a> gem translates djatoka URI’s to IIIF-compatible URI’s.
+                </li>
+              </ul>
+            </p>
+            <p>
+              Once you have deployed your image server, we highly recommend that you validate it to confirm that it complies with the
+              IIIF Image API, and to determine its level of <a href="http://www-sul.stanford.edu/iiif/image-api/compliance.html" target="_blank">IIIF compliance</a>.
+            </p>
+          </section>
+
+          <section class="step wrapper">
+            <span class="step-box">Step 2</span>
+            <h2>Publish metadata</h2>
+            <p>
+              Now that you have an image server that delivers IIIF-compliant image URI’s, you need to publish metadata about your
+              image-based objects using the <a href="http://www.shared-canvas.org/datamodel/iiif/metadata-api.html" target="_blank">IIIF Metadata API v1.0</a>.
+            </p>
+          </section>
+
+          <section class="step wrapper">
+            <span class="step-box">Step 3</span>
+            <h2>Deploy and integrate software</h2>
+            <p>
+              Now that you have an image server and published metadata its time to deploy software that makes use of the IIIF technology stack.  Ultimately
+              you will want to integrate these services and supporting software into your repository infrastructure, but there are some simple ways to
+              prototype IIIF support:
+              <ul>
+                <li>
+                  Deploy an image viewer that natively supports IIIF. Try to open your images in <a href="http://openseadragon.github.io/" target="_blank">OpenSeadragon</a>
+                  or <a href="https://github.com/ruven/iipmooviewer" target="_blank">IIPMooViewer</a>, for example.
+                </li>
+                <li>
+                  Deploy a version of <a href="https://github.com/DMSTech/mirador" target="_blank">Mirador</a> and try to compare your image resources to images
+                  hosted by another IIIF-compatible repository.  Write the <a href="https://groups.google.com/d/forum/iiif-discuss" target="_blank">IIIF Discuss</a>
+                  list and we’ll supply you with sample data.
+                </li>
+              </ul>
+            </p>
+          </section>
+
+          <section class="wrapper">
+            <h2>Implementation Tips &amp; Tricks</h2>
+            <ul>
+              <li>
+                Both the image api <a href="http://www-sul.stanford.edu/iiif/image-api/1.1/#info" target="_blank">Image Information Request</a> and the metadata
+                api are expressed as <a href="http://json-ld.org/" target="_blank">JSON-LD</a> serializations.
+              </li>
+              <li>
+                The goal of IIIF is to make your image resources available to web applications hosted on other domains.  Since most of the image viewers use javascript,
+                your image server will need to support <a href="http://enable-cors.org/" target="_blank">cross origin resource sharing</a>.
+              </li>
+            </ul>
+          </section>
+
+
+
+        </article>
+      </div> <!-- #main -->
+    </div> <!-- #main-container -->
+
+    <div class="footer-container">
+      <footer class="wrapper">
+        Please send feedback to <a href="mailto:Please send feedback to iiif-discuss@googlegroups.com">iiif-discuss@googlegroups.com</a>
+        <!--
+        <div class="footer-column">
+          <h4>Fusce quis lacus</h4>
+          <ul>
+            <li>Lectus</li>
+            <li>Eu posuere enim  </li>
+            <li>Praesent lacus</li>
+            <li>Justo</li>
+            <li>Volupat viver</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Morbi a posuere</h4>
+          <ul>
+            <li>Arcu nulla </li>
+            <li>Quis porta quam  </li>
+            <li>Praesent lacus </li>
+            <li>Donec ornare </li>
+            <li>Massa</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Quis lacus</h4>
+          <ul>
+            <li>Vel </li>
+            <li>Porta leo congue </li>
+            <li>Quis vestibulum </li>
+            <li>Pellentesque tellus </li>
+            <li>In dui</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Facilisis venenatis</h4>
+          <ul>
+            <li>Cras nec enim </li>
+            <li>Mi Mauris   </li>
+            <li>Condimentum </li>
+            <li>Luctus diam </li>
+          </ul>
+        </div>
+        -->
+      </footer>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+    <script src="js/main.js"></script>
+
+  </body>
+</html>

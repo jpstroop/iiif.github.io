@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>IIIF | International Image Interoperability Framework &rsaquo; Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,500' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="header-container">
+      <header class="wrapper clearfix">
+        <a class="title" title="IIIF : International Image Interoperability Framework" href="index.html">Home</a>
+        <nav>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="technical-details.html">Technical Details</a></li>
+            <li><a class="is-selected" href="apps-demos.html">Apps &amp; Demos</a></li>
+            <li><a href="community.html">Community</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <div class="main-container">
+      <div class="sub-pages clearfix">
+        <article>
+          <header class="wrapper">
+            <h1>Apps &amp; Demos</h1>
+          </header>
+
+          <section class="wrapper">
+            <h2>Image viewing clients</h2>
+            <dl>
+              <dt><a href="https://github.com/ruven/iipmooviewer" target="_blank">IIP mooViewer</a></dt>
+              <dd>
+                IIPMooViewer is an open source, Javascript and HTML5 image streaming and zooming client.  IIPMooViewer is IIIF-compatible and
+                works with <a href="https://github.com/ruven/iipsrv/tree/iiif" target="_blank">IIPServer</a> or other IIIF compatible servers.
+                Visit the <a href="http://iipimage.sourceforge.net/demo" target="_blank">IIP demo page</a> to see the IIP viewers in action.
+              </dd>
+
+              <dt><a href="http://dmstech.github.io/mirador/" target="_blank">Mirador</a></dt>
+              <dd>
+                Mirador is an open source image, Javascript and HTML5 viewer that delivers high resolution images in a workspace that enables
+                comparison of multiple images from multiple repositories.  Mirador is fully IIIF-compatible. Visit the
+                <a href="http://dmstech.github.io/mirador/demo" target="_blank">Mirador demo</a> to see it in action.
+              </dd>
+
+              <dt><a href="http://openseadragon.github.io/" target="_blank">OpenSeadragon</a></dt>
+              <dd>
+                OpenSeadragon is an open-source, Javascript viewer enabling smooth deep zoom and pan of high resolution images.  OpenSeadragon
+                is IIIF compatible.  A demo of OpenSeadragon in action can be seen on the
+                <a href="http://openseadragon.github.io/" target="_blank">project homepage</a>.
+              </dd>
+            </dl>
+          </section>
+
+          <section class="wrapper">
+            <h2>Image servers</h2>
+            <dl>
+              <dt><a href="http://sourceforge.net/projects/djatoka/" target="_blank">djatoka</a></dt>
+              <dd>
+                <p>
+                  djatoka is an open source, Java-based image server that provides compression and region extraction of JPEG 2000 images,
+                  URI-addressability of regions, and support for multiple image formats (including., BMP, GIF, JPG, PNG, PNM, TIF, JPEG 2000). djatoka
+                  comes with a plug-in framework that allows transformations to be applied to regions and resolutions (e.g., watermarking).
+                </p>
+                <p>
+                  djatoka is not natively IIIF-compatible.  However, djatoka URI’s are easily translated to IIIF URI’s (for example see this
+                  <a href="https://github.com/jronallo/djatoka" target="_blank">Ruby on Rails gem</a> that does the translation).
+                </p>
+              </dd>
+
+              <dt><a href="http://iipimage.sourceforge.net/documentation/server/" target="_blank">IIPImage Server</a></dt>
+              <dd>
+                <p>
+                  The IIPImage server is a high performance image server for streaming high resolution images. It supports advanced image
+                  features such as 16 and 32 bit color depths, floating point data, CIELAB colorimetric images and scientific imagery such
+                  as multispectral or hyperspectral images.
+                </p>
+                <p>
+                  The server  is an Fast CGI module written in C++ that is designed to be embedded within a host web server such as Apache, Lighttpd, MyServer or Nginx.
+                </p>
+                <p>
+                  IIPImage server is IIIF compatible (see the <a href="https://github.com/ruven/iipsrv/tree/iiif" target="_blank">IIIF branch</a> of the project).
+                </p>
+              </dd>
+
+              <dt><a href="https://github.com/pulibrary/loris" target="_blank">Loris</a></dt>
+              <dd>
+                Loris is an open source,  Pyton-based image server that supports the IIIF Image API ver 1.1.  Loris supports JPEG and TIFF sources as well as JPEG2000.
+              </dd>
+            </dl>
+          </section>
+
+          <section class="wrapper">
+            <h2>Implementation Demos</h2>
+            <dl>
+              <dt><a href="http://dmstech.github.io/mirador/demo/" target="_blank">Stanford University Libraries - Mirador demo</a></dt>
+              <dd>
+                This demo of Mirador, developed by the Stanford University Libraries, allows the user to compare images from several different
+                image repositories, including the Stanford Digital Repository, Yale University and Los Alamos National Labs.
+              </dd>
+
+              <dt><a href="http://libimages.princeton.edu/osd-demo/" target="_blank">Princeton University Libraries</a></dt>
+              <dd>
+                This demonstration, hosted by the Princeton University Libraries, shows an image being served by Loris and viewed using OpenSeadragon.
+              </dd>
+
+              <dt><a href="http://sanddragon.bl.uk/mirador/" target="_blank">The British Library</a></dt>
+              <dd>
+                The British Library deployed a demonstration of Mirador that allows the user to compare images from the British Library,
+                Yale University and Stanford University.  The BL adapted Mirador to display a YouTube video within the viewer that can be
+                played will inspecting images.
+              </dd>
+
+              <dt><a href="http://www.shared-canvas.org/impl/" target="_blank">Shared Canvas</a></dt>
+              <dd>
+                The Shared Canvas project has a variety of sample implementations that illustrate the power of the Shared Canvas data model
+                (which is the basis of the IIIF Metadata API).  The image servers behind the demos are IIIF compatible.
+              </dd>
+            </dl>
+          </section>
+
+        </article>
+      </div> <!-- #main -->
+    </div> <!-- #main-container -->
+
+    <div class="footer-container">
+      <footer class="wrapper">
+        Please send feedback to <a href="mailto:Please send feedback to iiif-discuss@googlegroups.com">iiif-discuss@googlegroups.com</a>
+        <!--
+        <div class="footer-column">
+          <h4>Fusce quis lacus</h4>
+          <ul>
+            <li>Lectus</li>
+            <li>Eu posuere enim  </li>
+            <li>Praesent lacus</li>
+            <li>Justo</li>
+            <li>Volupat viver</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Morbi a posuere</h4>
+          <ul>
+            <li>Arcu nulla </li>
+            <li>Quis porta quam  </li>
+            <li>Praesent lacus </li>
+            <li>Donec ornare </li>
+            <li>Massa</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Quis lacus</h4>
+          <ul>
+            <li>Vel </li>
+            <li>Porta leo congue </li>
+            <li>Quis vestibulum </li>
+            <li>Pellentesque tellus </li>
+            <li>In dui</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Facilisis venenatis</h4>
+          <ul>
+            <li>Cras nec enim </li>
+            <li>Mi Mauris   </li>
+            <li>Condimentum </li>
+            <li>Luctus diam </li>
+          </ul>
+        </div>
+        -->
+      </footer>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+    <script src="js/main.js"></script>
+
+  </body>
+</html>
