@@ -244,8 +244,8 @@ input[type=button].button-turquoise {
 }
 
 .main-interactive-image {
-  background-color: #dbdde0;
-  border-top: 1px solid #c0c3c8;
+  /*background-color: #dbdde0;*/
+  border-top: 1px solid #DCDDE0;
   padding: 40px 0;
 }
 
@@ -276,6 +276,7 @@ input[type=button].button-turquoise {
 }
 
 .main-highlight-blurbs {
+  background-color: #E9EAEC;
   overflow: auto;
   padding: 40px 0;
 }
@@ -283,7 +284,8 @@ input[type=button].button-turquoise {
 .main-highlight-blurbs .highlight {
   background-position: center top;
   background-repeat: no-repeat;
-  color: #979A9E;
+  /*color: #979A9E;*/
+  color: #444C5A;
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 14px;
   padding: 80px 5% 5px 5%;
@@ -298,6 +300,7 @@ input[type=button].button-turquoise {
   font-weight: 300;
   letter-spacing: 1px;
   margin: 0;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
 }
 
 .main-highlight-blurbs .highlight p {
