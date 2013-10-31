@@ -245,6 +245,7 @@ input[type=button].button-turquoise {
 
 .main-interactive-image {
   background-color: #dbdde0;
+  border-top: 1px solid #c0c3c8;
   padding: 40px 0;
 }
 
@@ -275,6 +276,7 @@ input[type=button].button-turquoise {
 }
 
 .main-highlight-blurbs {
+  overflow: auto;
   padding: 40px 0;
 }
 
@@ -284,7 +286,7 @@ input[type=button].button-turquoise {
   color: #979A9E;
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 14px;
-  padding: 80px 5% 30px 5%;
+  padding: 80px 5% 5px 5%;
   width: 90%;
   text-align: center;
 }
@@ -303,8 +305,8 @@ input[type=button].button-turquoise {
   margin: 20px 0;
 }
 
-.main-highlight-blurbs .open-source {
-  background-image: url('../img/icon-open-source-60x60.png');
+.main-highlight-blurbs .plug-n-play {
+  background-image: url('../img/icon-plug-n-play-60x60.png');
 }
 
 .main-highlight-blurbs .defined-apis {
@@ -321,9 +323,8 @@ input[type=button].button-turquoise {
 }
 
 .footer-container {
-  border-top: 1px solid #dbdde0;
+  border-top: 1px solid #c0c3c8;
   font-size: 10px;
-  margin-top: 30px;
   padding: 20px 0;
 }
 
