@@ -164,7 +164,7 @@ var interactiveImg = (function() {
       '2325,1300,800,800' : {},
       'full' : {},
       '2150,4500,1500,645' : {},
-      '2150,4350,4500,1935' : {}
+      '2125,4375,4500,1935' : {}
     }
 
     ddOptions['0,1200,5213,2242'][frameWidth + ','] = [0];
@@ -186,9 +186,9 @@ var interactiveImg = (function() {
     ddOptions['2150,4500,1500,645'][roundTo50s(frameWidth - 200) + ','] = [0];
     ddOptions['2150,4500,1500,645'][roundTo50s(frameWidth - 400) + ','] = [0];
 
-    ddOptions['2150,4350,4500,1935'][frameWidth + ','] = [0];
-    ddOptions['2150,4350,4500,1935'][roundTo50s(frameWidth - 200) + ','] = [0];
-    ddOptions['2150,4350,4500,1935'][roundTo50s(frameWidth - 400) + ','] = [0];
+    ddOptions['2125,4375,4500,1935'][frameWidth + ','] = [0];
+    ddOptions['2125,4375,4500,1935'][roundTo50s(frameWidth - 200) + ','] = [0];
+    ddOptions['2125,4375,4500,1935'][roundTo50s(frameWidth - 400) + ','] = [0];
   }
 
 
