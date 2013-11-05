@@ -61,7 +61,7 @@ textarea {
    ========================================================================== */
 
 body {
-  color: #333;
+  color: #555;
   font: 15px/26px 'Open Sans', Helvetica, Helvetica Neue, Arial;
 }
 
@@ -168,7 +168,7 @@ nav a:hover {
 
 .sub-pages section.step h2 {
   display: inline;
-  margin-left: 15px;
+  /*margin-left: 15px;*/
   margin-bottom: 5px;
 }
 
@@ -199,6 +199,13 @@ nav a:hover {
   margin-left: 20px;
   margin-right: 20px;
 }
+
+.url {
+  font-family: 'Inconsolata', sans-serif;
+  word-wrap: break-word;
+}
+
+/* Home page */
 
 .main-blurb {
   background-color: #2f353e;
@@ -244,35 +251,55 @@ input[type=button].button-turquoise {
 }
 
 .main-interactive-image {
-  /*background-color: #dbdde0;*/
   border-top: 1px solid #DCDDE0;
   padding: 40px 0;
 }
 
 .main-interactive-image .try-it {
   background-color: #fff;
-  border: 1px solid #c5c6c6;
-  border-radius: 4px;
   overflow: auto;
 }
 
 .main-interactive-image .try-it .label {
-  background-color: #f6f6f7;
-  border-right: 1px solid #c5c6c6;
   color: #6d7180;
-  font-size: 10px;
-  float: left;
-  padding: 0 10px;
+  font-weight: 300;
+  margin-bottom: 10px;
 }
 
-.main-interactive-image .try-it .select {
-  float: left;
-  margin-left: 50px;
+.main-interactive-image .try-it .iiif-url {
+  background-color: #fff;
+  font-family: 'Inconsolata', sans-serif;
+  word-wrap: break-word;
 }
 
-.main-interactive-image .container-image img {
-  padding-top: 20px;
-  width: 100%;
+.main-interactive-image .try-it .iiif-url select {
+  background: #00bc99 url(../img/icon-select-arrow.png) right center no-repeat;
+  border: 0px solid #ccc;
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Inconsolata', sans-serif;
+  margin: 0 2px;
+  padding: 6px 25px 6px 12px;
+  text-indent: 0.01px; /* Removes default arrow from firefox*/
+  text-overflow: "";  /*Removes default arrow from firefox*/
+  -moz-appearance: none; /* Removes Default Firefox style*/
+  -webkit-appearance: none;
+}
+
+.main-interactive-image .try-it .iiif-url select option {
+  font-family: 'Inconsolata', sans-serif;
+}
+
+.main-interactive-image .container-image {
+  height: 450px;
+  margin: 20px 0 10px 0;
+  overflow: auto;
+}
+
+.main-interactive-img-info {
+  color: #6d7180;
+  font-size: 13px;
+  font-style: italic;
 }
 
 .main-highlight-blurbs {
@@ -300,7 +327,7 @@ input[type=button].button-turquoise {
   font-weight: 300;
   letter-spacing: 1px;
   margin: 0;
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
 }
 
 .main-highlight-blurbs .highlight p {
@@ -326,7 +353,7 @@ input[type=button].button-turquoise {
 }
 
 .footer-container {
-  border-top: 1px solid #c0c3c8;
+  border-top: 1px solid #dbdde0;
   font-size: 10px;
   padding: 20px 0;
 }
@@ -440,7 +467,7 @@ input[type=button].button-turquoise {
 
   input[type=button].button-turquoise {
     font-size: 15px;
-    padding: 8px 24px;
+    padding: 12px 24px;
   }
 
 
@@ -484,6 +511,16 @@ input[type=button].button-turquoise {
   WIDE: Main
    ============ */
 
+  .main aside {
+    float: right;
+    width: 28%;
+  }
+
+  .main-highlight-blurbs .highlight {
+    float: left;
+    width: 23%;
+  }
+
   .sub-pages article {
     float: left;
     min-height: 400px;
@@ -494,10 +531,32 @@ input[type=button].button-turquoise {
     font-size: 20px;
   }
 
-  .main aside {
-    float: right;
-    width: 28%;
+
+  .sub-pages section.about-content,
+  .sub-pages section.quick-start,
+  .sub-pages section.step-1,
+  .sub-pages section.step-2,
+  .sub-pages section.step-3,
+  .sub-pages section.tips-n-tricks,
+  .sub-pages section.image-viewers,
+  .sub-pages section.image-servers,
+  .sub-pages section.impl-demos,
+  .sub-pages section.get-involved,
+  .sub-pages section.participants {
+    box-sizing: border-box;
+    padding-left: 110px;
   }
+  .sub-pages section.about-content { background: transparent url(../img/text-bg-about.png) left top no-repeat; }
+  .sub-pages section.quick-start { background: transparent url(../img/text-bg-quick-start.png) left top no-repeat; }
+  .sub-pages section.step-1 { background: transparent url(../img/text-bg-step-1.png) 10px top no-repeat; }
+  .sub-pages section.step-2 { background: transparent url(../img/text-bg-step-2.png) 10px top no-repeat; }
+  .sub-pages section.step-3 { background: transparent url(../img/text-bg-step-3.png) 10px top no-repeat; }
+  .sub-pages section.tips-n-tricks { background: transparent url(../img/text-bg-tips-n-tricks.png) left top no-repeat; }
+  .sub-pages section.image-viewers { background: transparent url(../img/text-bg-img-viewers.png) left top no-repeat; }
+  .sub-pages section.image-servers { background: transparent url(../img/text-bg-img-servers.png) left top no-repeat; }
+  .sub-pages section.impl-demos { background: transparent url(../img/text-bg-impl-demos.png) left top no-repeat; }
+  .sub-pages section.get-involved { background: transparent url(../img/text-bg-get-involved.png) left top no-repeat; }
+  .sub-pages section.participants { background: transparent url(../img/text-bg-participants.png) left top no-repeat; }
 
   .footer-container .footer-column {
     float: left;
@@ -515,11 +574,6 @@ input[type=button].button-turquoise {
   .wrapper {
     width: 1026px; /* 1140px - 10% for margins */
     margin: 0 auto;
-  }
-
-  .main-highlight-blurbs .highlight {
-    float: left;
-    width: 23%;
   }
 
   .footer-container .footer-column {
