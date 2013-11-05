@@ -275,7 +275,7 @@ input[type=button].button-turquoise {
 .main-interactive-image .try-it .iiif-url select {
   background: #00bc99 url(../img/icon-select-arrow.png) right center no-repeat;
   border: 0px solid #ccc;
-  border-radius: 2px;
+  border-radius: 3px;
   color: #fff;
   cursor: pointer;
   font-family: 'Inconsolata', sans-serif;
