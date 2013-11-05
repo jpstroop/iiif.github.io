@@ -293,14 +293,14 @@ input[type=button].button-turquoise {
 
 .main-interactive-image .container-image {
   height: 450px;
-  margin: 20px 0 10px 0;
+  margin: 20px 0 0 0;
   overflow: auto;
 }
 
 .main-interactive-img-info {
   color: #6d7180;
   font-size: 13px;
-  font-style: italic;
+  /*font-style: italic;*/
 }
 
 .main-highlight-blurbs {
