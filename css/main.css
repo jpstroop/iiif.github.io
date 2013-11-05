@@ -277,6 +277,7 @@ input[type=button].button-turquoise {
   border: 0px solid #ccc;
   border-radius: 2px;
   color: #fff;
+  cursor: pointer;
   font-family: 'Inconsolata', sans-serif;
   margin: 0 2px;
   padding: 6px 25px 6px 12px;
