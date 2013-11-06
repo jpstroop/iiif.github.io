@@ -50,7 +50,6 @@ var interactiveImg = (function() {
 
       renderIiifImg(region, size, $(this).val());
     });
-
   }
 
 
@@ -159,11 +158,11 @@ var interactiveImg = (function() {
     calculateFrameDimensions();
 
     ddOptions = {
-      '0,1200,5213,2242' : {},
+      '0,1200,5213,2242'    : {},
       '1400,1200,2500,1075' : {},
-      '2325,1300,800,800' : {},
-      'full' : {},
-      '2150,4500,1500,645' : {},
+      '2325,1300,800,800'   : {},
+      'full'                : {},
+      '2150,4500,1500,645'  : {},
       '2125,4375,4500,1935' : {}
     }
 
@@ -195,11 +194,7 @@ var interactiveImg = (function() {
   function roundTo50s(value) {
     value = value - (value % 50);
 
-    if (value < 50) {
-      value = 50;
-    }
-
-    return value;
+    return (value < 50) ? 50 : value;
   }
 
   return {
@@ -212,7 +207,5 @@ var interactiveImg = (function() {
 
 
 $(function() {
-
   interactiveImg.render();
-
 });
