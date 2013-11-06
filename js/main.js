@@ -2,18 +2,21 @@
 var interactiveImg = (function() {
   var frameHeight,
       frameWidth,
-      elemIiifImg = $('.main-interactive-image .container-image img'),
+      ddOptions = {},
+      elIiifImg = $('.main-interactive-image .container-image img'),
+      elTryItRegion = $('.try-it-region'),
+      elTryItSize = $('.try-it-size'),
+      elTryItRotation = $('.try-it-rotation');
 
-      // BL Image, 5213 x 5706
-      iiifImg = {
+  // BL Image, 5213 x 5706
+  var iiifImg = {
         baseUrl: 'http://stacks.stanford.edu/image/iiif/ff139pd0160%252FK90113-43',
         region: 'full',
         size: 'full',
         rotation: 0,
         quality: 'native',
         format: 'jpg'
-      },
-      ddOptions;
+      };
 
 
   function init() {
@@ -34,19 +37,19 @@ var interactiveImg = (function() {
       loadImage();
     });
 
-    $('.try-it-region').on('change', function() {
+    elTryItRegion.on('change', function() {
       loadSizeOptions($(this).val());
     });
 
-    $('.try-it-size').on('change', function() {
-      var region = $('.try-it-region').val();
+    elTryItSize.on('change', function() {
+      var region = elTryItRegion.val();
 
       loadRotationOptions(region, $(this).val());
     });
 
-    $('.try-it-rotation').on('change', function() {
-      var region = $('.try-it-region').val(),
-          size = $('.try-it-size').val();
+    elTryItRotation.on('change', function() {
+      var region = elTryItRegion.val(),
+          size = elTryItSize.val();
 
       renderIiifImg(region, size, $(this).val());
     });
@@ -60,13 +63,13 @@ var interactiveImg = (function() {
       region = regions[0];
     }
 
-    $('.try-it-region').html('');
+    elTryItRegion.html('');
 
     $.each(regions, function(index, option) {
-      $('.try-it-region').append('<option value="' + option + '">' + option + '</option>');
+      elTryItRegion.append('<option value="' + option + '">' + option + '</option>');
     });
 
-    $('.try-it-region').val(region).attr('selected', 'selected');
+    elTryItRegion.val(region).attr('selected', 'selected');
 
     loadSizeOptions(region, size, rotation);
   }
@@ -79,13 +82,13 @@ var interactiveImg = (function() {
       size = sizes[0];
     }
 
-    $('.try-it-size').html('');
+    elTryItSize.html('');
 
     $.each(sizes, function(index, option) {
-      $('.try-it-size').append('<option value="' + option + '">' + option + '</option>');
+      elTryItSize.append('<option value="' + option + '">' + option + '</option>');
     });
 
-    $('.try-it-size').val(size).attr('selected', 'selected');
+    elTryItSize.val(size).attr('selected', 'selected');
 
     loadRotationOptions(region, size, rotation);
   }
@@ -98,13 +101,13 @@ var interactiveImg = (function() {
       rotation = rotations[0];
     }
 
-    $('.try-it-rotation').html('');
+    elTryItRotation.html('');
 
     $.each(rotations, function(index, option) {
-      $('.try-it-rotation').append('<option value="' + option + '">' + option + '</option>');
+      elTryItRotation.append('<option value="' + option + '">' + option + '</option>');
     });
 
-    $('.try-it-rotation').val(rotation).attr('selected', 'selected');
+    elTryItRotation.val(rotation).attr('selected', 'selected');
 
     renderIiifImg(region, size, rotation);
   }
@@ -138,8 +141,8 @@ var interactiveImg = (function() {
 
 
   function renderIiifImg(region, size, rotation) {
-    elemIiifImg.hide();
-    elemIiifImg.attr('src', getIiifUrl(region, size, rotation)).fadeIn(300);
+    elIiifImg.hide();
+    elIiifImg.attr('src', getIiifUrl(region, size, rotation)).fadeIn(300);
   }
 
 
@@ -167,34 +170,35 @@ var interactiveImg = (function() {
     }
 
     ddOptions['0,1200,5213,2242'][frameWidth + ','] = [0];
-    ddOptions['0,1200,5213,2242'][roundTo50s(frameWidth - 200) + ','] = [0];
-    ddOptions['0,1200,5213,2242'][roundTo50s(frameWidth - 400) + ','] = [0];
+    ddOptions['0,1200,5213,2242'][roundTo(frameWidth - 200) + ','] = [0];
+    ddOptions['0,1200,5213,2242'][roundTo(frameWidth - 400) + ','] = [0];
 
     ddOptions['1400,1200,2500,1075'][frameWidth + ','] = [0];
-    ddOptions['1400,1200,2500,1075'][roundTo50s(frameWidth - 200) + ','] = [0];
-    ddOptions['1400,1200,2500,1075'][roundTo50s(frameWidth - 400) + ','] = [0];
+    ddOptions['1400,1200,2500,1075'][roundTo(frameWidth - 200) + ','] = [0];
+    ddOptions['1400,1200,2500,1075'][roundTo(frameWidth - 400) + ','] = [0];
 
     ddOptions['2325,1300,800,800']['400,400'] = [0,90,180,270];
     ddOptions['2325,1300,800,800']['200,200'] = [0,90,180,270];
     ddOptions['2325,1300,800,800']['100,100'] = [0,90,180,270];
 
     ddOptions['full'][',' + frameHeight] = [0,90,180,270];
-    ddOptions['full'][',' + roundTo50s(frameHeight - 200)] = [0,90,180,270];
+    ddOptions['full'][',' + roundTo(frameHeight - 200)] = [0,90,180,270];
 
     ddOptions['2150,4500,1500,645'][frameWidth + ','] = [0];
-    ddOptions['2150,4500,1500,645'][roundTo50s(frameWidth - 200) + ','] = [0];
-    ddOptions['2150,4500,1500,645'][roundTo50s(frameWidth - 400) + ','] = [0];
+    ddOptions['2150,4500,1500,645'][roundTo(frameWidth - 200) + ','] = [0];
+    ddOptions['2150,4500,1500,645'][roundTo(frameWidth - 400) + ','] = [0];
 
     ddOptions['2125,4375,4500,1935'][frameWidth + ','] = [0];
-    ddOptions['2125,4375,4500,1935'][roundTo50s(frameWidth - 200) + ','] = [0];
-    ddOptions['2125,4375,4500,1935'][roundTo50s(frameWidth - 400) + ','] = [0];
+    ddOptions['2125,4375,4500,1935'][roundTo(frameWidth - 200) + ','] = [0];
+    ddOptions['2125,4375,4500,1935'][roundTo(frameWidth - 400) + ','] = [0];
   }
 
 
-  function roundTo50s(value) {
-    value = value - (value % 50);
+  function roundTo(value) {
+    var cutoff = 50;
 
-    return (value < 50) ? 50 : value;
+    value = value - (value % cutoff);
+    return (value < cutoff) ? cutoff : value;
   }
 
   return {
@@ -205,7 +209,7 @@ var interactiveImg = (function() {
 
 })();
 
-
+// on document ready
 $(function() {
   interactiveImg.render();
 });
