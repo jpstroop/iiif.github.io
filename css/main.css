@@ -304,7 +304,7 @@ input[type=button].button-turquoise {
 }
 
 .main-highlight-blurbs {
-  background-color: #E9EAEC;
+  background-color: #F7F7F8;
   overflow: auto;
   padding: 40px 0;
 }
@@ -471,6 +471,9 @@ input[type=button].button-turquoise {
     padding: 12px 24px;
   }
 
+  .main-blurb .button-turquoise {
+    margin: 0 10px;
+  }
 
 /* ========================
   INTERMEDIATE: IE Fixes
