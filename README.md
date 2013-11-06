@@ -1,1 +1,1 @@
-Website source code of [http://iiif.io](http://iiif.io)
+[http://iiif.io](http://iiif.io) website source code.
