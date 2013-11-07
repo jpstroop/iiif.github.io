@@ -282,13 +282,23 @@ input[type=button].button-turquoise {
 }
 
 .try-it .iiif-url .param-label, .try-it .iiif-url .param-label-none {
-  border-bottom: 1px dotted #ccc;
   color: #9496A4;
   font-size: 10px;
-  font-weight: italic;
-  line-height: 1.6;
-  margin-bottom: 4px;
+  line-height: 1.4;
+  margin-bottom: 2px;
   text-align: center;
+}
+
+.try-it .iiif-url .param-value {
+  border-top: 1px solid #d9d9d9;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-radius: 12px;
+  padding-top: 7px;
+}
+
+.try-it .iiif-url .param-value-none {
+ padding-top: 7px;
 }
 
 .try-it .iiif-url .param-label-none {
