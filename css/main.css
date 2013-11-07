@@ -325,6 +325,7 @@ input[type=button].button-turquoise {
 }
 
 .main-interactive-image .container-image {
+  background: #fff url(../img/ajax-loader.gif) 10px 10px no-repeat;
   height: 450px;
   margin: 20px 0 0 0;
   overflow: auto;
