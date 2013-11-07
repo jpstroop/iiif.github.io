@@ -582,6 +582,8 @@ input[type=button].button-turquoise {
   .sub-pages section.participants {
     box-sizing: border-box;
     padding-left: 110px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
   }
   .sub-pages section.about-content { background: transparent url(../img/text-bg-about.png) left top no-repeat; }
   .sub-pages section.quick-start { background: transparent url(../img/text-bg-quick-start.png) left top no-repeat; }
