@@ -299,7 +299,7 @@ input[type=button].button-turquoise {
   cursor: pointer;
   font-family: 'Inconsolata', sans-serif;
   margin: 0 2px;
-  padding: 4px 25px 4px 12px;
+  padding: 4px 25px 4px 8px;
   text-indent: 0.01px; /* Removes default arrow from firefox*/
   text-overflow: "";  /*Removes default arrow from firefox*/
   -moz-appearance: none; /* Removes Default Firefox style*/
