@@ -237,9 +237,9 @@ nav a:hover {
 input[type=button].button-turquoise {
   background-color: #00bc99;
   border: 0;
-  border-right: 1px solid #2e8b74;
+  /*border-right: 1px solid #2e8b74;*/
   border-bottom: 3px solid #2e8b74;
-  border-left: 1px solid #2e8b74;
+  /*border-left: 1px solid #2e8b74;*/
   border-radius: 4px;
   color: #fff;
   font-family: 'Open Sans', Arial, sans-serif;
@@ -258,6 +258,10 @@ input[type=button].button-turquoise {
 .main-interactive-image .try-it {
   background-color: #fff;
   overflow: auto;
+}
+
+.main-interactive-image .try-it h2 {
+  color: #444c5a;
 }
 
 .main-interactive-image .try-it .label {
@@ -279,7 +283,7 @@ input[type=button].button-turquoise {
 
 .try-it .iiif-url .param-label, .try-it .iiif-url .param-label-none {
   border-bottom: 1px dotted #ccc;
-  color: #999;
+  color: #9496A4;
   font-size: 10px;
   font-weight: italic;
   line-height: 1.6;
@@ -317,9 +321,8 @@ input[type=button].button-turquoise {
 }
 
 .main-interactive-img-info {
-  color: #6d7180;
+  color: #9496A4;
   font-size: 13px;
-  /*font-style: italic;*/
 }
 
 .main-highlight-blurbs {
