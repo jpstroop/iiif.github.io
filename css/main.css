@@ -276,9 +276,13 @@ input[type=button].button-turquoise {
   word-wrap: break-word;
 }
 
-.try-it .iiif-url .params {
+.main-interactive-image .try-it .iiif-url {
+  list-style: none;
+  padding: 0;
+}
+
+.main-interactive-image .try-it .iiif-url li {
   float: left;
-  margin: 0 0px;
 }
 
 .try-it .iiif-url .param-label, .try-it .iiif-url .param-label-none {
