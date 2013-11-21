@@ -76,6 +76,10 @@ a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
 
+.font-weight-600 {
+  font-weight: 600;
+}
+
 .text-align-center {
   text-align: center;
 }
@@ -412,6 +416,13 @@ input[type=button].button-turquoise {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+
+.sub-pages section.image-viewers ul,
+.sub-pages section.image-servers ul,
+.sub-pages section.impl-demos ul {
+  padding-left: 20px;
 }
 
 
