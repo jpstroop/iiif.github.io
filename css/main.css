@@ -244,6 +244,8 @@ a.button-turquoise {
   border-bottom: 3px solid #2e8b74;
   border-radius: 4px;
   color: #fff;
+  display: block;
+  clear: left;
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 12px;
   font-weight: 400;
@@ -522,6 +524,8 @@ a.button-turquoise {
 
   .main-blurb a.button-turquoise {
     margin: 10px;
+    display: inline;
+    clear: none;
   }
 
 /* ========================
