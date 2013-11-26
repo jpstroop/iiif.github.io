@@ -528,6 +528,16 @@ a.button-turquoise {
     clear: none;
   }
 
+  .main-blurb a.button-turquoise {
+    margin: 10px;
+    display: inline;
+    clear: none;
+  }
+
+  .section-quick-links a.button-turquoise {
+
+  }
+
 /* ========================
   INTERMEDIATE: IE Fixes
    ======================== */
@@ -616,6 +626,13 @@ a.button-turquoise {
   .sub-pages section.impl-demos { background: transparent url(../img/text-bg-impl-demos.png) left top no-repeat; }
   .sub-pages section.get-involved { background: transparent url(../img/text-bg-get-involved.png) left top no-repeat; }
   .sub-pages section.participants { background: transparent url(../img/text-bg-participants.png) left top no-repeat; }
+
+  a.button-turquoise {
+    margin: 10px;
+    display: inline;
+    clear: none;
+  }
+
 
   .footer-container .footer-column {
     float: left;
