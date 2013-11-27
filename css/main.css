@@ -432,6 +432,10 @@ a.button-turquoise {
 }
 
 
+.sub-pages section.participants ul {
+  padding-left: 60px;
+}
+
 /* ===============
   ALL: IE Fixes
    =============== */
