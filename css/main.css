@@ -428,12 +428,15 @@ a.button-turquoise {
 .sub-pages section.image-viewers ul,
 .sub-pages section.image-servers ul,
 .sub-pages section.impl-demos ul {
-  padding-left: 20px;
+  padding-left: 40px;
 }
 
-
 .sub-pages section.participants ul {
-  padding-left: 60px;
+  padding-left: 40px;
+}
+
+.sub-pages section.get-involved dl dd {
+  margin-left: 20px;
 }
 
 /* ===============
