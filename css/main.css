@@ -58,7 +58,7 @@ textarea {
 
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
-   ========================================================================== */
+============================================================================= */
 
 body {
   color: #555;
@@ -84,9 +84,7 @@ a:link, a:visited, a:hover, a:active {
   text-align: center;
 }
 
-/* ==============
-  MOBILE: Menu
-   ============== */
+/*==== MOBILE: Menu ====*/
 
 nav ul {
   margin: 0;
@@ -116,104 +114,45 @@ nav a:hover {
 }
 
 
+/*==== MOBILE: Main ====*/
 
-/* ==============
-  MOBILE: Main
-   ============== */
-
-/* Sub pages */
-
-.sub-pages article section {
-  margin-bottom: 4em;
+.header-container {
+  background: #21252c url('../img/bg-color-bar.png') left top repeat-x;
+  padding-top: 3px;
 }
 
-.sub-pages article header {
-  border-bottom: 1px solid #dbdde0;
-  margin-bottom: 1.5em;
-  overflow: auto;
+.title {
+  background: transparent url('../img/logo-iiif-34x30.png') center 8px no-repeat;
+  display: block;
+  font-size: 0;
+  height: 40px;
+  margin: 0 auto;
+  padding-bottom: 4px;
+  width: 34px;
 }
 
-.sub-pages article h1 {
-  color: #2f353e;
-  font-family: 'Raleway',  Arial, sans-serif;
-  font-weight: 300;
-  font-size: 25px;
-  letter-spacing: 2px;
-  line-height: 1.5;
-  margin: 0.5em 0;
+.text-align-right {
+  text-align: right;
 }
 
-.sub-pages article ul, .sub-pages article ul {
-  list-style-type: circle;
+.text-align-left {
+  text-align: left;
 }
 
-.sub-pages article ul li, .sub-pages article ol li {
-  padding: 3px 0 3px 8px;
-}
-
-.sub-pages article .step-box {
-  background-color: #ed2534;
-  /*border: 2px solid #00bc99;*/
+a.button-turquoise {
+  background-color: #00bc99;
+  border: 0;
+  border-bottom: 3px solid #2e8b74;
   border-radius: 4px;
   color: #fff;
-  font-size: 15px;
-  font-weight: 400px;
-  padding: 8px 16px;
-}
-
-.sub-pages h2 {
-  color: #2f353e;
-  font-family: 'Raleway', Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  margin: 0 0 10px 0;
-}
-
-.sub-pages section.step h2 {
-  display: inline;
-  /*margin-left: 15px;*/
-  margin-bottom: 5px;
-}
-
-.sub-pages section .question {
-  color: #7f899f;
+  display: block;
+  clear: left;
   font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 300;
-  font-style: italic;
-  padding-top: 6px;
-}
-
-.sub-pages section dt {
-  margin-bottom: 10px;
-}
-
-.sub-pages section dd {
-  margin-bottom: 20px;
-}
-
-.technical-details article header {
-  margin-bottom: 0;
-}
-
-.technical-details .section-quick-links {
-  background-color: #F7F7F8;
-  border-bottom: 1px solid #dbdde0;
-  overflow: auto;
-  /*padding-bottom: 30px;*/
-  padding: 30px 0 32px 0;
-  text-align: center;
-}
-
-.technical-details .section-quick-links a.button-turquoise {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.url {
-  font-family: 'Inconsolata', sans-serif;
-  word-wrap: break-word;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  padding: 8px 16px;
 }
 
 /* Home page */
@@ -243,22 +182,6 @@ nav a:hover {
   letter-spacing: 1px;
   line-height: 1.8;
   word-spacing: 1px;
-}
-
-a.button-turquoise {
-  background-color: #00bc99;
-  border: 0;
-  border-bottom: 3px solid #2e8b74;
-  border-radius: 4px;
-  color: #fff;
-  display: block;
-  clear: left;
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  margin-top: 10px;
-  padding: 8px 16px;
 }
 
 .main-interactive-image {
@@ -401,6 +324,122 @@ a.button-turquoise {
   padding: 0px 5% 10px;
 }
 
+/*==== MOBILE: Sub pages : Common styles ====*/
+
+.sub-pages-container article section {
+  margin-bottom: 4em;
+}
+
+.sub-pages-container article header {
+  border-bottom: 1px solid #dbdde0;
+  margin-bottom: 1.5em;
+  overflow: auto;
+}
+
+.sub-pages-container article h1 {
+  color: #2f353e;
+  font-family: 'Raleway',  Arial, sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  margin: 0.5em 0;
+}
+
+.sub-pages-container article ul, .sub-pages-container article ul {
+  list-style-type: circle;
+}
+
+.sub-pages-container article ul li, .sub-pages-container article ol li {
+  padding: 3px 0 3px 8px;
+}
+
+.sub-pages-container article .step-box {
+  background-color: #ed2534;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400px;
+  padding: 8px 16px;
+}
+
+.sub-pages-container h2 {
+  color: #2f353e;
+  font-family: 'Raleway', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+}
+
+.sub-pages-container section.step h2 {
+  display: inline;
+  margin-bottom: 5px;
+}
+
+.sub-pages-container section .question {
+  color: #7f899f;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  font-style: italic;
+  padding-top: 6px;
+}
+
+.sub-pages-container section dt {
+  margin-bottom: 10px;
+}
+
+.sub-pages-container section dd {
+  margin-bottom: 20px;
+}
+
+.sub-pages-container section.image-viewers ul,
+.sub-pages-container section.image-servers ul,
+.sub-pages-container section.impl-demos ul {
+  padding-left: 40px;
+}
+
+
+/* Sub pages : Individual styles */
+
+.sub-pages-container .technical-details article header {
+  margin-bottom: 0;
+}
+
+.sub-pages-container .technical-details .section-quick-links {
+  background-color: #F7F7F8;
+  border-bottom: 1px solid #dbdde0;
+  overflow: auto;
+  /*padding-bottom: 30px;*/
+  padding: 30px 0 32px 0;
+  text-align: center;
+}
+
+.sub-pages-container .technical-details a.button-turquoise {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.sub-pages-container .community .participants ul {
+  padding-left: 40px;
+}
+
+.sub-pages-container .community .get-involved dl dd {
+  margin-left: 20px;
+}
+
+.sub-pages-container .image-api .editors-authors sup {
+  color: #999;
+  padding-left: 3px;
+}
+
+.sub-pages-container .image-api .editors-authors em {
+  color: #999;
+}
+
+
+/* Footer */
+
 .footer-container {
   border-top: 1px solid #dbdde0;
   font-size: x-small;
@@ -425,59 +464,18 @@ a.button-turquoise {
   padding: 0;
 }
 
-.sub-pages section.image-viewers ul,
-.sub-pages section.image-servers ul,
-.sub-pages section.impl-demos ul {
-  padding-left: 40px;
-}
-
-.sub-pages section.participants ul {
-  padding-left: 40px;
-}
-
-.sub-pages section.get-involved dl dd {
-  margin-left: 20px;
-}
-
 /* ===============
   ALL: IE Fixes
-   =============== */
+================== */
 
 .ie7 .title {
   padding-top: 20px;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-.header-container {
-  background: #21252c url('../img/bg-color-bar.png') left top repeat-x;
-  padding-top: 3px;
-}
-
-.title {
-  background: transparent url('../img/logo-iiif-34x30.png') center 8px no-repeat;
-  display: block;
-  font-size: 0;
-  height: 40px;
-  margin: 0 auto;
-  padding-bottom: 4px;
-  width: 34px;
-}
-
-.text-align-right {
-  text-align: right;
-}
-
-.text-align-left {
-  text-align: left;
-}
-
 
 /* ==========================================================================
    Media Queries
-   ========================================================================== */
+============================================================================= */
 
 @media only screen and (min-width: 480px) {
 
@@ -509,7 +507,7 @@ a.button-turquoise {
     padding-right: 0;
   }
 
-  .sub-pages article .step-box {
+  .sub-pages-container article .step-box {
     background-color: #ed2534;
     /*border: 2px solid #ed2534;*/
     border-radius: 4px;
@@ -593,51 +591,49 @@ a.button-turquoise {
     width: 23%;
   }
 
-  .sub-pages article {
-    float: left;
-    min-height: 400px;
-    width: 100%;
-  }
-
-  .sub-pages h2 {
-    font-size: 20px;
-  }
-
-
-  .sub-pages section.about-content,
-  .sub-pages section.quick-start,
-  .sub-pages section.step-1,
-  .sub-pages section.step-2,
-  .sub-pages section.step-3,
-  .sub-pages section.tips-n-tricks,
-  .sub-pages section.image-viewers,
-  .sub-pages section.image-servers,
-  .sub-pages section.impl-demos,
-  .sub-pages section.get-involved,
-  .sub-pages section.participants {
-    box-sizing: border-box;
-    padding-left: 110px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-  }
-  .sub-pages section.about-content { background: transparent url(../img/text-bg-about.png) left top no-repeat; }
-  .sub-pages section.quick-start { background: transparent url(../img/text-bg-quick-start.png) left top no-repeat; }
-  .sub-pages section.step-1 { background: transparent url(../img/text-bg-step-1.png) 10px top no-repeat; }
-  .sub-pages section.step-2 { background: transparent url(../img/text-bg-step-2.png) 10px top no-repeat; }
-  .sub-pages section.step-3 { background: transparent url(../img/text-bg-step-3.png) 10px top no-repeat; }
-  .sub-pages section.tips-n-tricks { background: transparent url(../img/text-bg-tips-n-tricks.png) left top no-repeat; }
-  .sub-pages section.image-viewers { background: transparent url(../img/text-bg-img-viewers.png) left top no-repeat; }
-  .sub-pages section.image-servers { background: transparent url(../img/text-bg-img-servers.png) left top no-repeat; }
-  .sub-pages section.impl-demos { background: transparent url(../img/text-bg-impl-demos.png) left top no-repeat; }
-  .sub-pages section.get-involved { background: transparent url(../img/text-bg-get-involved.png) left top no-repeat; }
-  .sub-pages section.participants { background: transparent url(../img/text-bg-participants.png) left top no-repeat; }
-
   a.button-turquoise {
     margin: 10px;
     display: inline;
     clear: none;
   }
 
+  .sub-pages-container article {
+    float: left;
+    min-height: 400px;
+    width: 100%;
+  }
+
+  .sub-pages-container h2 {
+    font-size: 20px;
+  }
+
+  .sub-pages-container section.about-content,
+  .sub-pages-container section.quick-start,
+  .sub-pages-container section.step-1,
+  .sub-pages-container section.step-2,
+  .sub-pages-container section.step-3,
+  .sub-pages-container section.tips-n-tricks,
+  .sub-pages-container section.image-viewers,
+  .sub-pages-container section.image-servers,
+  .sub-pages-container section.impl-demos,
+  .sub-pages-container section.get-involved,
+  .sub-pages-container section.participants {
+    box-sizing: border-box;
+    padding-left: 110px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  .sub-pages-container section.about-content { background: transparent url(../img/text-bg-about.png) left top no-repeat; }
+  .sub-pages-container section.quick-start { background: transparent url(../img/text-bg-quick-start.png) left top no-repeat; }
+  .sub-pages-container section.step-1 { background: transparent url(../img/text-bg-step-1.png) 10px top no-repeat; }
+  .sub-pages-container section.step-2 { background: transparent url(../img/text-bg-step-2.png) 10px top no-repeat; }
+  .sub-pages-container section.step-3 { background: transparent url(../img/text-bg-step-3.png) 10px top no-repeat; }
+  .sub-pages-container section.tips-n-tricks { background: transparent url(../img/text-bg-tips-n-tricks.png) left top no-repeat; }
+  .sub-pages-container section.image-viewers { background: transparent url(../img/text-bg-img-viewers.png) left top no-repeat; }
+  .sub-pages-container section.image-servers { background: transparent url(../img/text-bg-img-servers.png) left top no-repeat; }
+  .sub-pages-container section.impl-demos { background: transparent url(../img/text-bg-impl-demos.png) left top no-repeat; }
+  .sub-pages-container section.get-involved { background: transparent url(../img/text-bg-get-involved.png) left top no-repeat; }
+  .sub-pages-container section.participants { background: transparent url(../img/text-bg-participants.png) left top no-repeat; }
 
   .footer-container .footer-column {
     float: left;
