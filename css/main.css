@@ -359,7 +359,7 @@ a.button-turquoise {
   border-radius: 4px;
   color: #fff;
   font-size: 15px;
-  font-weight: 400px;
+  font-weight: 400;
   padding: 8px 16px;
 }
 
@@ -513,7 +513,7 @@ a.button-turquoise {
     border-radius: 4px;
     color: #fff;
     font-size: 14px;
-    font-weight: 600px;
+    font-weight: 600;
     padding: 8px 16px;
   }
 
