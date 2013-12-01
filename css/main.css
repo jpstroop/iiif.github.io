@@ -437,6 +437,71 @@ a.button-turquoise {
   color: #999;
 }
 
+.sub-pages-container .toc ol {
+  counter-reset: item;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.sub-pages-container .toc ol ol {
+  padding-left: 25px;
+}
+
+.sub-pages-container .toc li {
+  display: inline-block;
+  width: 92%;
+}
+
+.sub-pages-container .toc li:before {
+  content: counters(item, ".") ". ";
+  counter-increment: item;
+}
+
+.sub-pages-container table {
+  margin: 25px 0;
+}
+
+.sub-pages-container .url-syntax tr {
+  border-top: 1px solid #8ec6b8;
+  border-bottom: 1px solid #8ec6b8;
+}
+
+.sub-pages-container .url-syntax td:first-child {
+  font-family: monospace;
+}
+
+.sub-pages-container .url-syntax td {
+  padding: 8px 15px;
+  vertical-align: middle;
+  word-wrap: break-word;
+  /*white-space: pre;           /* CSS 2.0 */
+  /*white-space: pre-wrap;      /* CSS 2.1 */
+  /*white-space: pre-line;      /* CSS 3.0 */
+  white-space: -pre-wrap;     /* Opera 4-6 */
+  white-space: -o-pre-wrap;   /* Opera 7 */
+  white-space: -moz-pre-wrap; /* Mozilla */
+  white-space: -hp-pre-wrap;  /* HP Printers */
+}
+
+.monospace {
+  font-family: monospace;
+}
+
+.left-indent {
+  text-indent: 20px;
+}
+
+.code-block {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 13px;
+  margin: 0;
+  padding: 4px 12px;
+  word-break: break-all;
+}
 
 /* Footer */
 
@@ -634,6 +699,10 @@ a.button-turquoise {
   .sub-pages-container section.impl-demos { background: transparent url(../img/text-bg-impl-demos.png) left top no-repeat; }
   .sub-pages-container section.get-involved { background: transparent url(../img/text-bg-get-involved.png) left top no-repeat; }
   .sub-pages-container section.participants { background: transparent url(../img/text-bg-participants.png) left top no-repeat; }
+
+  .code-block {
+    margin: 0 0 0 20px;
+  }
 
   .footer-container .footer-column {
     float: left;

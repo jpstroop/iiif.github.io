@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>IIIF | International Image Interoperability Framework &rsaquo; Community</title>
+    <meta name="description" content="Interoperability Interoperability Image Framework : A community driven image framework with well defined APIs for making the world's image repositories interoperable and accessible">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/css/normalize.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,500' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="header-container">
+      <header class="wrapper clearfix">
+        <a class="title" title="IIIF : International Image Interoperability Framework" href="/">Home</a>
+        <nav>
+          <ul>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/technical-details.html">Technical Details</a></li>
+            <li><a href="/apps-demos.html">Apps &amp; Demos</a></li>
+            <li><a href="/community.html">Community</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <div class="sub-pages-container">
+      <div class="image-api clearfix">
+        <article>
+          <header>
+            <div class="wrapper">
+              <h1>IIIF Image API 1.1</h1>
+            </div>
+          </header>
+
+          <section class="editors-authors wrapper">
+            <p>
+              <strong>Editors</strong> <br>
+              Stuart Snydman<sup>1</sup>,
+              Simeon Warner<sup>2</sup>,
+              Robert Sanderson<sup>3</sup>,
+              Jon Stroop<sup>4</sup>
+            </p>
+            <p>
+              <strong>Authors</strong> <br>
+              Ben Albritton<sup>1</sup>,
+              Peter James<sup>5</sup>,
+              Neil Jefferies<sup>6</sup>,
+              Christopher Jesudurai<sup>1</sup>,
+              Sean Martin<sup>5</sup>,
+              Roger Mathisen<sup>7</sup>,
+              Petter Rønningsen<sup>7</sup>
+            </p>
+            <p>
+              <sup>1</sup> <em>Stanford University</em>,
+              <sup>2</sup> <em>Cornell University</em>,
+              <sup>3</sup> <em>Los Alamos National Laboratory</em>,
+              <sup>4</sup> <em>Princeton University</em>,
+              <sup>5</sup> <em>British Library</em>,
+              <sup>6</sup> <em>Oxford University</em>,
+              <sup>7</sup> <em>National Library of Norway</em>
+            </p>
+          </section>
+
+
+          <!-- Abstract -->
+          <section class="wrapper abstract">
+            <h2>Abstract</h2>
+            <p>
+              This document describes an image delivery API proposed by the International Image Interoperability Framework (IIIF)
+              group. The IIIF image API specifies a web service that returns an image in response to a standard http or https request.
+              The URL can specify the region, size, rotation, quality characteristics and format of the requested image. A URL can
+              also be constructed to request basic technical information about the image to support client applications.  The IIIF API
+              was conceived of to facilitate systematic reuse of image resources in digital image repositories maintained by cultural
+              heritage organizations. The API could be adopted by any image repository or service, and can be used to retrieve static
+              images in response to a properly constructed URL.
+            </p>
+            <p>
+              Please send feedback to <a href="mailto:iiif-discuss@googlegroups.com">iiif-discuss@googlegroups.com</a>
+            </p>
+          </section>
+
+
+          <!-- Table of Contents -->
+          <section class="wrapper toc">
+            <h2>Table of Contents</h2>
+            <ol>
+              <li><a href="#audience">Audience</a></li>
+              <li><a href="#url-syntax">URL Syntax</a>
+                <ol>
+                  <li><a href="#url-syntax-image-request">Image Request URL Syntax</a></li>
+                  <li><a href="#url-syntax-image-info">Image Information Request URL Syntax</a></li>
+                </ol>
+              </li>
+              <li><a href="#identifier">Identifier</a></li>
+              <li><a href="#parameters">Parameters</a>
+                <ol>
+                  <li><a href="#parameters-region">Region</a></li>
+                  <li><a href="#parameters-size">Size</a></li>
+                  <li><a href="#parameters-rotation">Rotation</a></li>
+                  <li><a href="#parameters-quality">Quality</a></li>
+                  <li><a href="#parameters-format">Format</a></li>
+                  <li><a href="#parameters-order">Order of Implementation</a></li>
+                </ol>
+              </li>
+              <li><a href="#image-info-request">Image Information Request</a></li>
+              <li><a href="#server-responses">Server Responses</a>
+                <ol>
+                  <li><a href="#server-responses-successful">Successful Responses</a></li>
+                  <li><a href="#server-responses-error">Error Conditions</a></li>
+                </ol>
+              </li>
+              <li><a href="#authentication">Authentication</a></li>
+              <li><a href="#compliance-levels">Compliance Levels</a></li>
+              <li><a href="#url-encoding-and-decoding">URL Encoding and Decoding</a></li>
+              <li><a href="#security-considerations">Security Considerations</a></li>
+            </ol>
+          </section>
+
+
+          <!-- Appendices -->
+          <section class="wrapper appendices">
+            <h2>Appendices</h2>
+            <ol type="A">
+              <li><a href="#implementation">Implementation Notes</a></li>
+              <li><a href="#acknowledgements">Acknowledgements</a></li>
+              <li><a href="#changelog">Change Log</a></li>
+            </ol>
+          </section>
+
+
+          <!-- 1. Audience -->
+          <section class="wrapper audience" id="audience">
+            <h2>1. Audience</h2>
+            <p>
+              This document is intended for developers building applications that share digital image assets. This includes:
+            </p>
+            <ul>
+              <li>
+                Developers building digital image repositories who would like to offer services for easily sharing digital images with
+                other repositories, web applications, or other software that uses images from the web.
+              </li>
+              <li>
+                Developers building web applications or software that want to retrieve images from compliant repositories.
+              </li>
+              <li>
+                A specifically targeted audience are developers and managers of digital image repositories, web applications and image
+                tools at cultural heritage institutions, like museums, libraries and archives.
+              </li>
+            </ul>
+          </section>
+
+
+          <!-- 2. URL Syntax -->
+          <section class="wrapper url-syntax" id="url-syntax">
+            <h2>2. URL Syntax</h2>
+            <p>
+              The IIIF Image API can be called in two forms: one to request an image, and a second to request techincal information
+              about the image. Both forms convey the request's information in the path segments of the URI, rather than as query
+              parameters. This makes responses more easily able to be cached, either at the server or by standard web-caching
+              infrastructure. It also permits a minimal implementation using pre-computed files in a matching directory structure.
+            </p>
+            <p>
+              There are four parameters shared by the two requests, and other IIIF specifications:
+            </p>
+            <table>
+              <tr>
+                <td>scheme</td>
+                <td>
+                  Indicates the use of the http or https protocol in calling the service.
+                </td>
+              </tr>
+              <tr>
+                <td>Server</td>
+                <td>
+                  The host server on which the service resides.
+                </td>
+              </tr>
+              <tr>
+                <td>prefix</td>
+                <td>
+                  The path on the host server to the service. This prefix is optional, but may be useful when the host server supports
+                  multiple services. The prefix MAY contain multiple path segments, delimited by slashes, but all other special characters
+                  MUST be encoded. See <a href="#url-encoding-and-decoding">Section 9</a> for more information.
+                </td>
+              </tr>
+              <tr>
+                <td>identifier</td>
+                <td>
+                  The identifier of the requested image, expressed as a string. This may be an ark, URN, filename, or other identifier.
+                  Special characters MUST be URI encoded.
+                </td>
+              </tr>
+            </table>
+            <p>
+              The combination of these parameters forms the image’s base URI, according to the following URI Template
+              (<a href="http://tools.ietf.org/html/rfc6570" target="_blank">RFC6570</a>):
+            </p>
+            <p class="code-block">
+              {scheme}://{server}{/prefix}/{identifier}
+            </p>
+            <p>
+              To allow for extension, this specification does not define the behaviour of an implementing server when it receives
+              requests that do not match one of described request syntaxes.
+            </p>
+          </section>
+
+
+          <!-- 2.1 Image Request URL Syntax -->
+          <section class="wrapper url-syntax-image-request" id="url-syntax-image-request">
+            <h2>2.1 Image Request URL Syntax</h2>
+            <p>
+              The IIIF Image API URL for requesting an image MUST conform to the following format:
+            </p>
+            <p class="code-block">
+              http[s]://server/[prefix/]identifier/region/size/rotation/quality[.format]
+            </p>
+            <p>
+              where <span class="monospace">[]</span> delimits components which are optional.
+            </p>
+            <p>
+              The URI Template form is:
+            </p>
+            <p class="code-block">
+              {scheme}://{server}{/prefix}/{identifier}/{region}/{size}/{rotation}/{quality}{.format}
+            </p>
+            <p>
+              For example:
+            </p>
+            <p class="code-block">
+              http://www.example.org/image-service/abcd1234/full/full/0/native.jpg
+            </p>
+            <p>
+              The sections of the Image Request URL include region, size, rotation, quality and format parameters defining the
+              characteristics of the returned image. These are described in detail in
+              <a href="#parameters">Section 4 - Image Request Parameters</a>.
+            </p>
+          </section>
+
+
+          <!-- 2.2 Image Information Request URL Syntax -->
+          <section class="wrapper url-syntax-image-request" id="url-syntax-image-request">
+            <h2>2.2 Image Information Request URL Syntax</h2>
+            <p>
+              The IIIF Image API URL for requesting image information MUST conform to the following syntax:
+            </p>
+            <p class="code-block">
+              http[s]://server/[prefix/]identifier/info.json
+            </p>
+            <p>
+              where "info.json" is a literal string.
+            </p>
+            <p>
+              For each image made available, the server, prefix and identifier components of the information request must be identical
+              to those for the image request described above.
+            </p>
+            <p>
+              The URI Template form is:
+            </p>
+            <p class="code-block">
+              {scheme}://{server}{/prefix}/{identifier}/info.json
+            </p>
+            <p>
+              For example:
+            </p>
+            <p class="code-block">
+              http://www.example.org/image-service/abcd1234/info.json
+            </p>
+            <p>
+              It is recommended that if the image’s base URI is dereferenced, then the client should either redirect to the
+              information request using a 303 status code (see <a href="#success">Section 6.1</a>), or return the same result.
+              See <a href="#image-info-request">Section 5 - Image Information Request</a> for more information.
+            </p>
+          </section>
+
+        </article>
+      </div>
+    </div>
+
+    <div class="footer-container">
+      <footer class="wrapper">
+        Please send feedback to <a href="mailto:iiif-discuss@googlegroups.com">iiif-discuss@googlegroups.com</a>
+      </footer>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-7219229-22', 'iiif.io');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
