@@ -78,6 +78,7 @@
           <!-- Abstract -->
           <section class="wrapper abstract">
             <h2>Abstract</h2>
+
             <p>
               This document describes an image delivery API proposed by the International Image Interoperability Framework (IIIF)
               group. The IIIF image API specifies a web service that returns an image in response to a standard http or https request.
@@ -96,6 +97,7 @@
           <!-- Table of Contents -->
           <section class="wrapper toc">
             <h2>Table of Contents</h2>
+
             <ol>
               <li><a href="#audience">Audience</a></li>
               <li><a href="#url-syntax">URL Syntax</a>
@@ -133,6 +135,7 @@
           <!-- Appendices -->
           <section class="wrapper appendices">
             <h2>Appendices</h2>
+
             <ol type="A">
               <li><a href="#implementation">Implementation Notes</a></li>
               <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -144,9 +147,11 @@
           <!-- 1. Audience -->
           <section class="wrapper audience" id="audience">
             <h2>1. Audience</h2>
+
             <p>
               This document is intended for developers building applications that share digital image assets. This includes:
             </p>
+
             <ul>
               <li>
                 Developers building digital image repositories who would like to offer services for easily sharing digital images with
@@ -166,6 +171,7 @@
           <!-- 2. URL Syntax -->
           <section class="wrapper url-syntax" id="url-syntax">
             <h2>2. URL Syntax</h2>
+
             <p>
               The IIIF Image API can be called in two forms: one to request an image, and a second to request techincal information
               about the image. Both forms convey the request's information in the path segments of the URI, rather than as query
@@ -175,7 +181,8 @@
             <p>
               There are four parameters shared by the two requests, and other IIIF specifications:
             </p>
-            <table>
+
+            <table class="image-api-table">
               <tr>
                 <td>scheme</td>
                 <td>
@@ -204,6 +211,7 @@
                 </td>
               </tr>
             </table>
+
             <p>
               The combination of these parameters forms the image’s base URI, according to the following URI Template
               (<a href="http://tools.ietf.org/html/rfc6570" target="_blank">RFC6570</a>):
@@ -221,6 +229,7 @@
           <!-- 2.1 Image Request URL Syntax -->
           <section class="wrapper url-syntax-image-request" id="url-syntax-image-request">
             <h2>2.1 Image Request URL Syntax</h2>
+
             <p>
               The IIIF Image API URL for requesting an image MUST conform to the following format:
             </p>
@@ -253,6 +262,7 @@
           <!-- 2.2 Image Information Request URL Syntax -->
           <section class="wrapper url-syntax-image-request" id="url-syntax-image-request">
             <h2>2.2 Image Information Request URL Syntax</h2>
+
             <p>
               The IIIF Image API URL for requesting image information MUST conform to the following syntax:
             </p>
@@ -289,6 +299,7 @@
           <!-- 3. Identifier -->
           <section class="wrapper identifier" id="identifier">
             <h2>3. Identifier</h2>
+
             <p>
               The API places no restrictions on the form of the identifiers that a server may use or support, although the identifier
               MUST be expressed as a string. All special characters (e.g. ? or #) MUST be URI encoded to avoid unpredictable client
@@ -302,6 +313,7 @@
           <!-- 4. Image Request Parameters -->
           <section class="wrapper parameters" id="parameters">
             <h2>4. Image Request Parameters</h2>
+
             <p>
               All parameters described below are required for compliant construction of a IIIF image API URL. The sequence of
               parameters in the URL MUST be in the order described below. The order of the parameters is also intended as the order of
@@ -317,12 +329,14 @@
           <!-- 4.1 Region -->
           <section class="wrapper parameters-region" id="parameters-region">
             <h2>4.1 Region</h2>
+
             <p>
               The region parameter defines the rectangular portion of the source image to be returned. Region can be specified by
               pixel coordinates, percentage or by the value “full”, which specifies that the entire region of the source image should
               be returned.
             </p>
-            <table>
+
+            <table class="image-api-table">
               <tr class="no-border">
                 <th>Form of Region Parameter</th>
                 <th>Description</th>
@@ -353,6 +367,7 @@
                 </td>
               </tr>
             </table>
+
             <p>
               If the request specifies a region which extends beyond the dimensions of the source image, then the service should
               return an image cropped at the boundary of the source image.
@@ -364,51 +379,337 @@
             <p>
               Examples:
             </p>
+
             <ul class="example-urls">
               <li>
                 <span class="numbered-box">1</span>
-                http://www.example.org/image-service/abcd1234/<span class="highlight">80,15,60,75</span>/full/0/native.jpg
+                http://www.example.org/image-service/abcd1234/<span class="highlight">full</span>/full/0/native.jpg
               </li>
               <li>
                 <span class="numbered-box">2</span>
-                http://www.example.org/image-service/abcd1234/<span class="highlight">pct:10,10,80,70</span>/full/0/native.jpg
+                http://www.example.org/image-service/abcd1234/<span class="highlight">80,15,60,75</span>/full/0/native.jpg
               </li>
               <li>
                 <span class="numbered-box">3</span>
-                http://www.example.org/image-service/abcd1234/<span class="highlight">full</span>/full/0/native.jpg
+                http://www.example.org/image-service/abcd1234/<span class="highlight">80,15,125,200</span>/full/0/native.jpg
+              </li>
+              <li>
+                <span class="numbered-box">4</span>
+                http://www.example.org/image-service/abcd1234/<span class="highlight">pct:10,10,80,70</span>/full/0/native.jpg
+              </li>
+              <li>
+                <span class="numbered-box">5</span>
+                http://www.example.org/image-service/abcd1234/<span class="highlight">pct:20,20,100,100</span>/full/0/native.jpg
               </li>
             </ul>
 
+            <div class="figure-image-api-region"></div>
           </section>
 
 
-          <!--  -->
-          <section class="wrapper" id="">
-            <h2></h2>
+          <!-- 4.2 Size -->
+          <section class="wrapper parameters-size" id="parameters-size">
+            <h2>4.2 Size</h2>
+
+            <p>
+              The size parameter determines the dimensions to which the extracted region is to be scaled.
+            </p>
+
+            <table class="image-api-table">
+              <tr class="no-border">
+                <th>Form of Region Parameter</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>full</td>
+                <td>
+                  The extracted region is not scaled, and is returned at its full size.
+                </td>
+              </tr>
+              <tr>
+                <td>w,</td>
+                <td>
+                  The extracted region should be scaled so that its width is exactly equal to w, and the height will be a
+                  calculated value that maintains the aspect ratio of the requested region.
+                </td>
+              </tr>
+              <tr>
+                <td>,h</td>
+                <td>
+                  The extracted region should be scaled so that its height is exactly equal to h, and the width will be a
+                  calculated value that maintains the aspect ratio of the requested region.
+                </td>
+              </tr>
+              <tr>
+                <td>pct:n</td>
+                <td>
+                  The width and height of the returned image is scaled to n% of the width and height of the extracted region.
+                  The aspect ratio of the returned image is the same as that of the extracted region.
+                </td>
+              </tr>
+              <tr>
+                <td>w,h</td>
+                <td>
+                  The width and height of the returned image are exactly w and h. The aspect ratio of the returned image MAY
+                  be different than the extracted region, resulting in a distorted image.
+                </td>
+              </tr>
+              <tr>
+                <td>!w,h</td>
+                <td>
+                  The image content is scaled for the best fit such that the resulting width and height are less than or equal to
+                  the requested width and height. The exact scaling MAY be determined by the service provider, based on characteristics
+                  including image quality and system performance. The dimensions of the returned image content are calculated to
+                  maintain the aspect ratio of the extracted region.
+                </td>
+              </tr>
+            </table>
+
+            <p>
+              If the resulting height or width is zero, then the server MUST return a 400 (bad request) status code.
+            </p>
+            <p>
+              The image server MAY support scaling beyond the full size of the extracted region.
+            </p>
+            <p>
+              Examples:
+            </p>
+
+            <ul class="example-urls">
+              <li>
+                <span class="numbered-box">1</span>
+                http://www.example.org/image-service/abcd1234/full/<span class="highlight">full</span>/0/native.jpg
+              </li>
+              <li>
+                <span class="numbered-box">2</span>
+                http://www.example.org/image-service/abcd1234/full/<span class="highlight">100,</span>/0/native.jpg
+              </li>
+              <li>
+                <span class="numbered-box">3</span>
+                http://www.example.org/image-service/abcd1234/full/<span class="highlight">,100</span>/0/native.jpg
+              </li>
+              <li>
+                <span class="numbered-box">4</span>
+                http://www.example.org/image-service/abcd1234/full/<span class="highlight">pct:50</span>/0/native.jpg
+              </li>
+              <li>
+                <span class="numbered-box">5</span>
+                http://www.example.org/image-service/abcd1234/full/<span class="highlight">150,75</span>/0/native.jpg
+              </li>
+              <li>
+                <span class="numbered-box">6</span>
+                http://www.example.org/image-service/abcd1234/full/<span class="highlight">!150,75</span>/0/native.jpg
+              </li>
+            </ul>
+
+            <div class="figure-image-api-size"></div>
           </section>
 
 
-          <!--  -->
-          <section class="wrapper" id="">
-            <h2></h2>
+          <!-- 4.3 Rotation -->
+          <section class="wrapper parameters-rotation" id="parameters-rotation">
+            <h2>4.3 Rotation</h2>
+
+            <p>
+              The rotation value represents the number of degrees of clockwise rotation from the original, and may be any
+              floating point number from 0 to 360. Initially most services will only support 0, 90, 180 or 270 as valid
+              values.
+            </p>
+            <p>
+              Examples:
+            </p>
+
+            <ul class="example-urls">
+              <li>
+                <span class="numbered-box">1</span>
+                http://www.example.org/image-service/abcd1234/full/full/<span class="highlight">0</span>/native.jpg
+              </li>
+              <li>
+                <span class="numbered-box">2</span>
+                http://www.example.org/image-service/abcd1234/full/full/<span class="highlight">90</span>/native.jpg
+              </li>
+              <li>
+                <span class="numbered-box">3</span>
+                http://www.example.org/image-service/abcd1234/full/full/<span class="highlight">180</span>/native.jpg
+              </li>
+              <li>
+                <span class="numbered-box">4</span>
+                http://www.example.org/image-service/abcd1234/full/full/<span class="highlight">270</span>/native.jpg
+              </li>
+              <li>
+                <span class="numbered-box">5</span>
+                http://www.example.org/image-service/abcd1234/full/full/<span class="highlight">22.5</span>/native.jpg
+              </li>
+            </ul>
+
+            <div class="figure-image-api-rotation"></div>
+
+            <p>
+              In most cases a rotation will change the width and height dimensions of the returned image file.  The service SHOULD
+              return an image file that contains all of the image contents requested in the region and size parameters, even if the
+              dimensions of the returned image file are different than specified in the size parameter.  The image contents SHOULD NOT
+              be scaled as a result of the rotation, and there SHOULD be no additional space between the corners of the rotated image
+              contents and the bounding box of the returned image file.
+            </p>
+            <p>
+              For non-90-degree rotations the API does not specify the background color.
+            </p>
+
           </section>
 
 
-          <!--  -->
-          <section class="wrapper" id="">
-            <h2></h2>
+          <!-- 4.4 Quality -->
+          <section class="wrapper parameters-quality" id="parameters-quality">
+            <h2>4.4 Quality</h2>
+
+            <p>
+              The quality parameter determines the bit-depth of the delivered image. The quality value of "native" requests an image
+              of the same bit-depth as the source image. Values other than "native" are requested transformations of the bit-depth of
+              the source image.
+            </p>
+
+            <table class="image-api-table">
+              <tr>
+                <th>Quality Parameter</th>
+                <th>Returned</th>
+              </tr>
+              <tr>
+                <td>native</td>
+                <td>
+                  The image is returned at an unspecified bit-depth.
+                </td>
+              </tr>
+              <tr>
+                <td>color</td>
+                <td>
+                  The image is returned in full color, typically using 24 bits per pixel.
+                </td>
+              </tr>
+              <tr>
+                <td>grey</td>
+                <td>
+                  The image is returned in greyscale, where each pixel is black, white or any degree of grey in between, typically
+                  using 8 bits per pixel.
+                </td>
+              </tr>
+              <tr>
+                <td>bitonal</td>
+                <td>
+                  The image returned is bitonal, where each pixel is either black or white, using 1 bit per pixel when the format
+                  permits.
+                </td>
+              </tr>
+            </table>
+
+            <p>
+              Examples:
+            </p>
+
+            <ul class="example-urls">
+              <li>
+                <span class="numbered-box">1</span>
+                http://www.example.org/image-service/abcd1234/full/600,/0/<span class="highlight">native</span>.jpg
+              </li>
+              <li>
+                <span class="numbered-box">2</span>
+                http://www.example.org/image-service/abcd1234/full/600,/0/<span class="highlight">color</span>.jpg
+              </li>
+              <li>
+                <span class="numbered-box">3</span>
+                http://www.example.org/image-service/abcd1234/full/600,/0/<span class="highlight">grey</span>.jpg
+              </li>
+              <li>
+                <span class="numbered-box">4</span>
+                http://www.example.org/image-service/abcd1234/full/600,/0/<span class="highlight">bitonal</span>.jpg
+              </li>
+            </ul>
+
+            <div class="figure-image-api-quality"></div>
+
           </section>
 
 
-          <!--  -->
-          <section class="wrapper" id="">
-            <h2></h2>
+          <!-- 4.5 Format -->
+          <section class="wrapper parameters-format" id="parameters-format">
+            <h2>4.5 Format</h2>
+
+            <p>
+              The format of the returned image is optionally expressed as an extension at the end of the URL.
+            </p>
+
+            <table class="image-api-table">
+              <tr>
+                <th>Extension</th>
+                <th>MIME Type</th>
+              </tr>
+              <tr>
+                <td>jpg</td>
+                <td>image/jpeg</td>
+              </tr>
+              <tr>
+                <td>tif</td>
+                <td>image/tiff</td>
+              </tr>
+              <tr>
+                <td>png</td>
+                <td>image/png</td>
+              </tr>
+              <tr>
+                <td>gif</td>
+                <td>image/gif</td>
+              </tr>
+              <tr>
+                <td>jp2</td>
+                <td>image/jp2</td>
+              </tr>
+              <tr>
+                <td>pdf</td>
+                <td>application/pdf</td>
+              </tr>
+            </table>
+
+            <ul class="example-urls">
+              <li>
+                http://www.example.org/image-service/abcd1234/full/600,/0/native.<span class="highlight">jpg</span>
+              </li>
+              <li>
+                http://www.example.org/image-service/abcd1234/full/600,/0/native.<span class="highlight">png</span>
+              </li>
+              <li>
+                http://www.example.org/image-service/abcd1234/full/600,/0/native.<span class="highlight">tif</span>
+              </li>
+            </ul>
+
+            <p>
+              If the format is not specified in the URI, then the server SHOULD use the HTTP Accept header to determine the client’s
+              preferences for the format. The server may either do 200 (return the representation in the response) or 30x (redirect to
+              the correct URI with a format extension) style content negotiation. If neither are given, then the server should use a
+              default format of its own choosing.
+            </p>
+
           </section>
 
 
-          <!--  -->
-          <section class="wrapper" id="">
-            <h2></h2>
+          <!-- 4.6 Order of Implementation -->
+          <section class="wrapper parameters-order" id="parameters-order">
+            <h2>4.6 Order of Implementation</h2>
+
+            <p>
+              The sequence of parameters in the URL is intended to express the order in which image manipulations are made against the
+              original. This is important to consider when implementing the service because applying the same parameters in a
+              different sequence will often result in a different image being delivered. The order is critical so that the application
+              calling the service reliably receives the output it expects.
+            </p>
+            <p>
+              The parameters should be interpreted as if the the sequence of image manipulations were:
+            </p>
+            <p class="code-block">
+              Region THEN Size THEN Rotation THEN Quality THEN Format
+            </p>
+
+            <br><br>
+            <div class="figure-image-api-order"></div>
+
           </section>
 
 
