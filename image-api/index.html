@@ -554,7 +554,6 @@
             <p>
               For non-90-degree rotations the API does not specify the background color.
             </p>
-
           </section>
 
 
@@ -625,7 +624,6 @@
             </ul>
 
             <div class="figure-image-api-quality"></div>
-
           </section>
 
 
@@ -686,7 +684,6 @@
               the correct URI with a format extension) style content negotiation. If neither are given, then the server should use a
               default format of its own choosing.
             </p>
-
           </section>
 
 
@@ -709,7 +706,6 @@
 
             <br><br>
             <div class="figure-image-api-order"></div>
-
           </section>
 
 
@@ -739,16 +735,18 @@
                 <td>Required</td>
                 <td>
                   The context document that describes the semantics of the terms used in the document.  This must be the URI:
-                  "http://library.stanford.edu/iiif/image-api/1.1/context.json" for version 1.1 of the IIIF Image API.  This document
-                  allows the response to be interpreted as RDF, using the JSON-LD serialization.
+                  <a href="http://library.stanford.edu/iiif/image-api/1.1/context.json" target="_blank">"http://library.stanford.edu/iiif/image-api/1.1/context.json"</a>
+                  for version 1.1 of the IIIF Image API.  This document
+                  allows the response to be interpreted as RDF, using the
+                  <a href="http://www.json-ld.org/" target="_blank">JSON-LD</a> serialization.
                 </td>
               </tr>
               <tr>
                 <td>@id</td>
                 <td>Required</td>
                 <td>
-                  The base URI of the image (as defined in Section 2), including scheme, server, prefix and identifier without a
-                  trailing slash.
+                  The base URI of the image (as defined in <a href="#url-syntax">Section 2</a>), including scheme, server, prefix and
+                  identifier without a trailing slash.
                 </td>
               </tr>
               <tr>
@@ -810,7 +808,8 @@
                 <td>profile</td>
                 <td>Optional</td>
                 <td>
-                  URI indicating the compliance level supported. Values as described in Section 8. Compliance Levels
+                  URI indicating the compliance level supported. Values as described in
+                  <a href="#compliance-levels">Section 8. Compliance Levels</a>
                 </td>
               </tr>
             </table>
@@ -834,7 +833,6 @@
               The @context property is included to make the JSON document also a valid JSON-LD representation. In order to allow for
               extension, additional properties not specified here may be included but should be ignored if not understood.
             </p>
-
           </section>
 
 
@@ -857,7 +855,6 @@
               Status code 304 is handled exactly as per the HTTP specification. Clients should therefore expect to encounter all of
               these situations and not assume that the entity-body of the initial response necessarily contains the image data.
             </p>
-
           </section>
 
 
@@ -922,7 +919,6 @@
                 </td>
               </tr>
             </table>
-
           </section>
 
 
@@ -934,7 +930,7 @@
               This API does not specify whether the image server will support authentication or what mechanism it might use. In the
               case of  "401 Unauthorized" HTTP error response, the content of the WWW-Authenticate header will depend on the
               authentication mechanism supported by the server. If the server supports HTTP Basic or Digest authentication then the
-              header should follow RFC2617, for example:
+              header should follow <a href="http://www.ietf.org/rfc/rfc2617" target="_blank">RFC2617</a>, for example:
             </p>
             <p class="code-block">
               WWW-Authenticate: Basic realm="Images"
@@ -944,7 +940,7 @@
               allow the user to login:
             </p>
             <p class="code-block">
-              WWW-Authenticate: Cookie location="https://example.com/login&redirect={URI}"
+              WWW-Authenticate: Cookie location="https://example.com/login&amp;redirect={URI}"
             </p>
             <p>
               Where {URI} is a template parameter that SHOULD be used if the login server supports redirection after login. A client
@@ -953,7 +949,6 @@
               specification, there is no standard way to indicate appropriate redirection to a login screen, or convey a URI template
               to insert a return URI.
             </p>
-
           </section>
 
 
@@ -963,8 +958,9 @@
 
             <p>
               A service should specify on all responses the extent to which the API is supported. This is done by including an HTTP
-              Link header (RFC5988) entry pointing to the description of the highest level of conformance of which ALL of the
-              requirements are met. The “rel” type to be used is “profile”, and thus a complete header might look like:
+              Link header (<a href="http://tools.ietf.org/html/rfc5988" target="_blank">RFC5988</a>) entry pointing to the
+              description of the highest level of conformance of which ALL of the requirements are met. The “rel” type to be used is
+              “profile”, and thus a complete header might look like:
             </p>
             <p class="code-block">
               Link: &lt;http://library.stanford.edu/iiif/image-api/1.1/compliance.html#level0&gt;;rel="profile"
@@ -972,7 +968,7 @@
             <p>
               An image server MAY declare different compliance levels for different images. If the compliance level is not indicated,
               then a client should assume level 0 compliance only. For detailed compliance definitions see
-              http://library.stanford.edu/iiif/image-api/1.1/compliance.html.
+              <a href="http://library.stanford.edu/iiif/image-api/1.1/compliance.html" target="_blank">http://library.stanford.edu/iiif/image-api/1.1/compliance.html</a>.
             </p>
             <p>
               The compliance profile URI given in the Link header (between &lt; and &gt;) may also be returned in the profile property of
@@ -987,7 +983,8 @@
 
             <p>
               The URL syntax of this API relies upon slash (/) separators which MUST NOT be encoded. Clients MUST percent-encode
-              special characters (the to-encode set below: percent and gen-delims of RFC3986 except the colon) within the components
+              special characters (the to-encode set below: percent and gen-delims of
+              <a href="http://www.ietf.org/rfc/rfc3986" target="_blank">RFC3986</a> except the colon) within the components
               of requests. For example, any slashes within the identifier part of the URL MUST be percent-encoded. Encoding is
               necessary only for the identifier because other components will not include special characters.
             </p>
@@ -1081,8 +1078,8 @@
             <ul>
               <li>
                 For use cases that enable the saving of the image, it is RECOMMENDED to use the HTTP Content-Disposition header
-                (RFC6266) to provide a convenient filename that distinguishes the image, based on the identifier and parameters
-                provided.
+                (<a href="http://www.ietf.org/rfc/rfc6266" target="_blank">RFC6266</a>) to provide a convenient filename that
+                distinguishes the image, based on the identifier and parameters provided.
               </li>
               <li>
                 This specification makes no assertion about the rights status of requested images or metadata, whether or not
@@ -1095,15 +1092,16 @@
               <li>
                 Image identifiers that include the slash (/ %2F) or backslash (\ %5C) characters may cause problems with some HTTP
                 servers. Apache servers from version 2.2.18 support the "AllowEncodedSlashes NoDecode" (link to
-                http://httpd.apache.org/docs/2.2/en/mod/core.html#allowencodedslashes) configuration directive which will correctly pass
-                these characters to client applications without rejecting or decoding them. Servers using older versions of Apache and
-                local identifiers which include these characters will need to use a workaround such as internally translating or
-                escaping slash and backslash to safe value (perhaps by double URL-encoding them).
+                <a href="http://httpd.apache.org/docs/2.2/en/mod/core.html#allowencodedslashes" target="_blank">http://httpd.apache.org/docs/2.2/en/mod/core.html#allowencodedslashes</a>)
+                configuration directive which will correctly pass these characters to client applications without rejecting or
+                decoding them. Servers using older versions of Apache and local identifiers which include these characters will
+                need to use a workaround such as internally translating or escaping slash and backslash to safe value (perhaps
+                by double URL-encoding them).
               </li>
               <li>
-                As described in Section 4.2 (Rotation), in order to retain the size of the requested image contents, rotation will
-                change the width and height dimensions of the returned image file. A formula for calculating the dimensions of the
-                returned image file for a given rotation can be found here.
+                As described in <a href="#parameters-rotation">Section 4.2 (Rotation)</a>, in order to retain the size of the
+                requested image contents, rotation will change the width and height dimensions of the returned image file. A
+                formula for calculating the dimensions of the returned image file for a given rotation can be found here.
               </li>
             </ul>
           </section>
@@ -1114,7 +1112,8 @@
             <h2>B. Acknowledgments <a href="#toc"><img class="to-toc" src="/img/image-api/icon-toc.png" alt=""></a></h2>
 
             <p>
-              The production of this document was generously supported by a grant from the Andrew W. Mellon Foundation.
+              The production of this document was generously supported by a grant from the
+              <a href="http://www.mellon.org/" target="_blank">Andrew W. Mellon Foundation</a>.
             </p>
             <p>
               The full IIIF Working Group deserves thanks and recognition for their continuous engagement, innovative ideas and
@@ -1137,8 +1136,6 @@
           </section>
 
 
-
-
           <!-- C. Change Log -->
           <section class="wrapper changelog" id="changelog">
             <h2>C. Change Log <a href="#toc"><img class="to-toc" src="/img/image-api/icon-toc.png" alt=""></a></h2>
@@ -1157,17 +1154,17 @@
               <tr>
                 <td>2013-09-04</td>
                 <td>ssnydman</td>
-                <td>Added @context to Image Information Request table in Section 5.</td>
+                <td>Added @context to Image Information Request table in <a href="#image-info-request">Section 5</a>.</td>
               </tr>
               <tr>
                 <td>2013-06-26</td>
                 <td>ssnydman</td>
-                <td>Changed quality parameter definitions in Section 4.4.</td>
+                <td>Changed quality parameter definitions in <a href="#parameters-quality">Section 4.4</a>.</td>
               </tr>
               <tr>
                 <td>2013-06-17</td>
                 <td>ssnydman</td>
-                <td>Draft release 1.1. View change log.</td>
+                <td>Draft release 1.1. <a href="http://www-sul.stanford.edu/iiif/image-api/1.1/changelog_1.1.html" target="_blank">View change log</a>.</td>
               </tr>
               <tr>
                 <td>2012-08-10</td>
