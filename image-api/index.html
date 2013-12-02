@@ -285,6 +285,145 @@
             </p>
           </section>
 
+
+          <!-- 3. Identifier -->
+          <section class="wrapper identifier" id="identifier">
+            <h2>3. Identifier</h2>
+            <p>
+              The API places no restrictions on the form of the identifiers that a server may use or support, although the identifier
+              MUST be expressed as a string. All special characters (e.g. ? or #) MUST be URI encoded to avoid unpredictable client
+              behaviors. The URL syntax relies upon slash (/) separators so any slashes in the identifier MUST be URI encoded (aka.
+              percent-encoded, replace / with %2F ). See discussion in
+              <a href="#url-encoding-and-decoding">Section 9 - URL Encoding and Decoding</a>.
+            </p>
+          </section>
+
+
+          <!-- 4. Image Request Parameters -->
+          <section class="wrapper parameters" id="parameters">
+            <h2>4. Image Request Parameters</h2>
+            <p>
+              All parameters described below are required for compliant construction of a IIIF image API URL. The sequence of
+              parameters in the URL MUST be in the order described below. The order of the parameters is also intended as the order of
+              the operations by which the service should manipulate the image content. Thus, the image content is first extracted as a
+              region of the source image, then scaled to the requested size, rotated and transformed into the color depth and format.
+              This resulting image content is returned as the representation for the URL. All transformations are performed within the
+              bounds of integer arithmatic.  The rounding method is not specified.  Floating point numbers should be have at most 10
+              decimal digits and consist only of decimal digits and “.” with a leading zero if less than 1.
+            </p>
+          </section>
+
+
+          <!-- 4.1 Region -->
+          <section class="wrapper parameters-region" id="parameters-region">
+            <h2>4.1 Region</h2>
+            <p>
+              The region parameter defines the rectangular portion of the source image to be returned. Region can be specified by
+              pixel coordinates, percentage or by the value “full”, which specifies that the entire region of the source image should
+              be returned.
+            </p>
+            <table>
+              <tr class="no-border">
+                <th>Form of Region Parameter</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>full</td>
+                <td>
+                  The complete image is returned, without any cropping.
+                </td>
+              </tr>
+              <tr>
+                <td>x,y,w,h</td>
+                <td>
+                  The region of the source image to be returned is defined in terms of absolute pixel values. The value of x
+                  represents the number of pixels from the 0 position on the horizontal axis. The value of y represents the number of
+                  pixels from the 0 position on the vertical axis. Thus the x,y position 0,0 is the upper left-most pixel of the image. w
+                  represents the width of the region and h represents the height of the region in pixels.
+                </td>
+              </tr>
+              <tr>
+                <td>pct:x,y,w,h</td>
+                <td>
+                  The region to be returned is specified as a sequence of percentages of the source image’s dimensions. Thus,
+                  x represents the number of pixels from the 0 position on the horizontal axis, calculated as a percentage of the source
+                  image’s width. w represents the width of the region calculated as a percentage of the source image’s width. The same
+                  applies to y and h respectively. These may be floating point numbers (see
+                  <a href="#image-info-request">Section 5 - Image Information Request</a>).
+                </td>
+              </tr>
+            </table>
+            <p>
+              If the request specifies a region which extends beyond the dimensions of the source image, then the service should
+              return an image cropped at the boundary of the source image.
+            </p>
+            <p>
+              If the requested region's height or width is zero, or if the region is entirely outside the bounds of the source image,
+              then the server MUST return a 400 (bad request) status code.
+            </p>
+            <p>
+              Examples:
+            </p>
+            <ul class="example-urls">
+              <li>
+                <span class="numbered-box">1</span>
+                http://www.example.org/image-service/abcd1234/<span class="highlight">80,15,60,75</span>/full/0/native.jpg
+              </li>
+              <li>
+                <span class="numbered-box">2</span>
+                http://www.example.org/image-service/abcd1234/<span class="highlight">pct:10,10,80,70</span>/full/0/native.jpg
+              </li>
+              <li>
+                <span class="numbered-box">3</span>
+                http://www.example.org/image-service/abcd1234/<span class="highlight">full</span>/full/0/native.jpg
+              </li>
+            </ul>
+
+          </section>
+
+
+          <!--  -->
+          <section class="wrapper" id="">
+            <h2></h2>
+          </section>
+
+
+          <!--  -->
+          <section class="wrapper" id="">
+            <h2></h2>
+          </section>
+
+
+          <!--  -->
+          <section class="wrapper" id="">
+            <h2></h2>
+          </section>
+
+
+          <!--  -->
+          <section class="wrapper" id="">
+            <h2></h2>
+          </section>
+
+
+          <!--  -->
+          <section class="wrapper" id="">
+            <h2></h2>
+          </section>
+
+
+          <!--  -->
+          <section class="wrapper" id="">
+            <h2></h2>
+          </section>
+
+
+          <!--  -->
+          <section class="wrapper" id="">
+            <h2></h2>
+          </section>
+
+
         </article>
       </div>
     </div>

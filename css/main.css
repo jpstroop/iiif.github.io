@@ -461,16 +461,30 @@ a.button-turquoise {
   margin: 25px 0;
 }
 
-.sub-pages-container .url-syntax tr {
-  border-top: 1px solid #8ec6b8;
-  border-bottom: 1px solid #8ec6b8;
+.sub-pages-container .url-syntax tr,
+.sub-pages-container .parameters-region tr {
+  border-top: 1px solid #2e8b74;
+  border-bottom: 1px solid #2e8b74;
 }
 
-.sub-pages-container .url-syntax td:first-child {
+.sub-pages-container .url-syntax th,
+.sub-pages-container .parameters-region th {
+  background-color: #2e8b74;
+  color: #fff;
+  font-weight: normal;
+  padding: 8px 15px;
+  text-align: left;
+  vertical-align: middle;
+  white-space: normal;
+}
+
+.sub-pages-container .url-syntax td:first-child,
+.sub-pages-container .parameters-region  td:first-child {
   font-family: monospace;
 }
 
-.sub-pages-container .url-syntax td {
+.sub-pages-container .url-syntax td,
+.sub-pages-container .parameters-region td {
   padding: 8px 15px;
   vertical-align: middle;
   word-wrap: break-word;
@@ -482,6 +496,18 @@ a.button-turquoise {
   white-space: -moz-pre-wrap; /* Mozilla */
   white-space: -hp-pre-wrap;  /* HP Printers */
 }
+
+.sub-pages-container .example-urls {
+  font-family: monospace;
+  font-size: 13px;
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.sub-pages-container .example-urls li {
+  padding: 2px 0;
+}
+
 
 .monospace {
   font-family: monospace;
@@ -501,6 +527,17 @@ a.button-turquoise {
   margin: 0;
   padding: 4px 12px;
   word-break: break-all;
+}
+
+.numbered-box {
+  background-color: #eb2026;
+  border-radius: 3px;
+  color: #fff;
+  padding: 4px 6px 3px 6px;
+}
+
+.highlight {
+  color: #eb2026;
 }
 
 /* Footer */
@@ -699,6 +736,11 @@ a.button-turquoise {
   .sub-pages-container section.impl-demos { background: transparent url(../img/text-bg-impl-demos.png) left top no-repeat; }
   .sub-pages-container section.get-involved { background: transparent url(../img/text-bg-get-involved.png) left top no-repeat; }
   .sub-pages-container section.participants { background: transparent url(../img/text-bg-participants.png) left top no-repeat; }
+
+  .sub-pages-container .url-syntax th,
+  .sub-pages-container .parameters-region th {
+    white-space: nowrap;
+  }
 
   .code-block {
     margin: 0 0 0 20px;
