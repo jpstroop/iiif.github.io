@@ -433,12 +433,14 @@ a.button-turquoise {
   margin-left: 20px;
 }
 
-.sub-pages-container .image-api .editors-authors sup {
+.sub-pages-container .image-api .editors-authors sup,
+.sub-pages-container .metadata-api .editors-authors sup {
   color: #999;
   padding-left: 3px;
 }
 
-.sub-pages-container .image-api .editors-authors em {
+.sub-pages-container .image-api .editors-authors em,
+.sub-pages-container .metadata-api .editors-authors em {
   color: #999;
 }
 
@@ -469,6 +471,7 @@ a.button-turquoise {
 .sub-pages-container .image-api-table tr {
   border-top: 1px solid #2e8b74;
   border-bottom: 1px solid #2e8b74;
+  font-size: 14px;
 }
 
 .sub-pages-container .image-api-table th {
@@ -538,6 +541,7 @@ a.button-turquoise {
 }
 
 .to-toc {
+  float: right;
   height: 25px;
   padding-left: 20px;
   width: 25px;
