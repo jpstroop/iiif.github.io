@@ -363,13 +363,18 @@ a.button-turquoise {
   padding: 8px 16px;
 }
 
-.sub-pages-container h2 {
+.sub-pages-container h2,
+.sub-pages-container h3 {
   color: #2f353e;
   font-family: 'Raleway', Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
   letter-spacing: 1px;
   margin: 0 0 10px 0;
+}
+
+.sub-pages-container h3 {
+  font-size: 17px;
 }
 
 .sub-pages-container section.step h2 {
@@ -478,7 +483,7 @@ a.button-turquoise {
 
 .sub-pages-container .image-api-table td:first-child {
   font-family: monospace;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .sub-pages-container .image-api-table td {
@@ -489,6 +494,10 @@ a.button-turquoise {
   white-space: -o-pre-wrap;   /* Opera 7 */
   white-space: -moz-pre-wrap; /* Mozilla */
   white-space: -hp-pre-wrap;  /* HP Printers */
+}
+
+.sub-pages-container .url-encoding-and-decoding .image-api-table td {
+  word-break: break-all;
 }
 
 .sub-pages-container .example-urls {
@@ -523,9 +532,15 @@ a.button-turquoise {
 }
 
 .figure-image-api-quality {
-  background-image: url('/img/image-api/iiif-img-size-215x845.png');
+  background-image: url('/img/image-api/iiif-img-quality-215x845.png');
   height: 845px;
   width: 215px;
+}
+
+.to-toc {
+  height: 25px;
+  padding-left: 20px;
+  width: 25px;
 }
 
 .monospace {
@@ -543,6 +558,7 @@ a.button-turquoise {
   display: inline-block;
   font-family: monospace;
   font-size: 13px;
+  line-height: 1.6;
   margin: 0;
   padding: 4px 12px;
   word-break: break-all;
@@ -726,6 +742,10 @@ a.button-turquoise {
 
   .sub-pages-container h2 {
     font-size: 20px;
+  }
+
+  .sub-pages-container h3 {
+    font-size: 18px;
   }
 
   .sub-pages-container section.about-content,
