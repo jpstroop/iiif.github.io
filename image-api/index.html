@@ -1074,15 +1074,127 @@
           </section>
 
 
-          <!--  -->
-          <section class="wrapper" id="">
-            <h2> <a href="#toc"><img class="to-toc" src="/img/image-api/icon-toc.png" alt=""></a></h2>
+          <!-- A. Implementation Notes -->
+          <section class="wrapper implementation" id="implementation">
+            <h2>A. Implementation Notes <a href="#toc"><img class="to-toc" src="/img/image-api/icon-toc.png" alt=""></a></h2>
+
+            <ul>
+              <li>
+                For use cases that enable the saving of the image, it is RECOMMENDED to use the HTTP Content-Disposition header
+                (RFC6266) to provide a convenient filename that distinguishes the image, based on the identifier and parameters
+                provided.
+              </li>
+              <li>
+                This specification makes no assertion about the rights status of requested images or metadata, whether or not
+                authentication has been accomplished.  Please see the IIIF Metadata API for rights information.
+              </li>
+              <li>
+                This API does not specify how image servers fulfill requests, what quality the returned images will have for different
+                parameters, or how parameters may affect performance. See the compliance document for more discussion.
+              </li>
+              <li>
+                Image identifiers that include the slash (/ %2F) or backslash (\ %5C) characters may cause problems with some HTTP
+                servers. Apache servers from version 2.2.18 support the "AllowEncodedSlashes NoDecode" (link to
+                http://httpd.apache.org/docs/2.2/en/mod/core.html#allowencodedslashes) configuration directive which will correctly pass
+                these characters to client applications without rejecting or decoding them. Servers using older versions of Apache and
+                local identifiers which include these characters will need to use a workaround such as internally translating or
+                escaping slash and backslash to safe value (perhaps by double URL-encoding them).
+              </li>
+              <li>
+                As described in Section 4.2 (Rotation), in order to retain the size of the requested image contents, rotation will
+                change the width and height dimensions of the returned image file. A formula for calculating the dimensions of the
+                returned image file for a given rotation can be found here.
+              </li>
+            </ul>
           </section>
 
 
-          <!--  -->
-          <section class="wrapper" id="">
-            <h2> <a href="#toc"><img class="to-toc" src="/img/image-api/icon-toc.png" alt=""></a></h2>
+          <!-- B. Acknowledgments -->
+          <section class="wrapper acknowledgments" id="acknowledgments">
+            <h2>B. Acknowledgments <a href="#toc"><img class="to-toc" src="/img/image-api/icon-toc.png" alt=""></a></h2>
+
+            <p>
+              The production of this document was generously supported by a grant from the Andrew W. Mellon Foundation.
+            </p>
+            <p>
+              The full IIIF Working Group deserves thanks and recognition for their continuous engagement, innovative ideas and
+              feedback. Members of the group not listed as authors or editors above include Aquiles Alencar Brayner, Richard
+              Boulderstone, Svein Arne Brygfjeld, Tom Cramer, Markus Enders, Renhart Gittens, David Golding, Tim Gollins, Peter James,
+              Dean Krafft, Matt McGrattan, Stephane Pillorget, Johan van der Knijff, Romain Vassilieff, and William Ying.
+            </p>
+            <p>
+              The inspiration, use cases and initial outline for this API originated from the work of the Digital Medieval Manuscript
+              Interoperabiltiy Technical Council.
+            </p>
+            <p>
+              Attendees of the third annual LibDevConX workshop gave an early draft of this API a thoughtful hearing and provided
+              essential feedback to ensure that the API fit with diverse use cases and technical environments.
+            </p>
+            <p>
+              Many thanks to Matthieu Bonicel, Kevin Clarke, Mark Patton, Lynn McRae, Willy Mene, Brian Tingle, Ian Davis and Scotty
+              Logan for your thoughtful contributions to the effort and written feedback.
+            </p>
+          </section>
+
+
+
+
+          <!-- C. Change Log -->
+          <section class="wrapper changelog" id="changelog">
+            <h2>C. Change Log <a href="#toc"><img class="to-toc" src="/img/image-api/icon-toc.png" alt=""></a></h2>
+
+            <table class="image-api-table">
+              <tr>
+                <th>Date</th>
+                <th>Editor</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>2013-09-17</td>
+                <td>ssnydman</td>
+                <td>Version 1.1 released.</td>
+              </tr>
+              <tr>
+                <td>2013-09-04</td>
+                <td>ssnydman</td>
+                <td>Added @context to Image Information Request table in Section 5.</td>
+              </tr>
+              <tr>
+                <td>2013-06-26</td>
+                <td>ssnydman</td>
+                <td>Changed quality parameter definitions in Section 4.4.</td>
+              </tr>
+              <tr>
+                <td>2013-06-17</td>
+                <td>ssnydman</td>
+                <td>Draft release 1.1. View change log.</td>
+              </tr>
+              <tr>
+                <td>2012-08-10</td>
+                <td>ssnydman</td>
+                <td>Release 1.0</td>
+              </tr>
+              <tr>
+                <td>2012-07-13</td>
+                <td>rsanderson</td>
+                <td>Incorporates responses to RFC feedback</td>
+              </tr>
+              <tr>
+                <td>2012-03-09</td>
+                <td>ssnydman</td>
+                <td>Initial release</td>
+              </tr>
+              <tr>
+                <td>2012-04-13</td>
+                <td>ssnydman</td>
+                <td>0.2 after internal review and IIIF April Meeting</td>
+              </tr>
+              <tr>
+                <td>2012-05-02</td>
+                <td>ssnydman</td>
+                <td>RFC version</td>
+              </tr>
+            </table>
           </section>
 
 
