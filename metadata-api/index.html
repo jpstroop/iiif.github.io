@@ -686,20 +686,22 @@
             </p>
             <p>
               Any of the metadata fields may be repeated. In JSON this is done by giving a list, rather than a single string. Language
-              may also be associated with descriptive metadata strings using the following pattern of value plus the RFC 5646 code,
-              instead of a plain string:
+              may also be associated with descriptive metadata strings using the following pattern of value plus the
+              <a href="http://tools.ietf.org/html/rfc5646" target="_blank">RFC 5646</a> code, instead of a plain string:
             </p>
             <p class="code-block">
               {"@value":"Information", "@language":"en"}
             </p>
             <p>
-              Note that RFC 5646 allows the script of the text to be included after a hyphen, such as "ar-latn", and clients should be
+              Note that <a href="http://tools.ietf.org/html/rfc5646" target="_blank">RFC 5646</a> allows the script of the text to
+              be included after a hyphen, such as "ar-latn", and clients should be
               aware of this possibility. This allows for full internationalization of the user interface components described in the
               response, as the metadata labels as well as values may be translated in this manner; examples are given below.
               Client developers should be aware that some implementations may add an "@graph" property at the top level, which
               contains the object. This is a side effect of JSON-LD serialization. This pattern is NOT recommended for implementation,
               and either the client or server can use the JSON-LD compaction algorithm to remove it. Using JSON-LD Framing with the
-              supplied Frames will avoid the generation of the "@graph" pattern.
+              <a href="http://www.shared-canvas.org/datamodel/iiif/implementation.html#frames" target="_blank">supplied Frames</a>
+              will avoid the generation of the "@graph" pattern.
             </p>
             <p>
               In the examples given below, comments in the JSON are given in blue italics and must be omitted. Example information
@@ -957,7 +959,8 @@
             </p>
             <p>
               Each Association of a Content Resource must have the "motivation" field and the value must be "sc:painting". This is in
-              order to distinguish it from comment annotations about the Canvas, described in further detail in section 5.6.6.
+              order to distinguish it from comment annotations about the Canvas, described in further detail in
+              <a href="#advanced-comment">Section 5.6.6</a>.
             </p>
             <p>
               The image itself is linked in the "resource" property of the Annotation. It must have an "@id" field, and it should have
