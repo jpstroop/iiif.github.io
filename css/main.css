@@ -494,6 +494,16 @@ a.button-turquoise {
   text-align: center;
 }
 
+.sub-pages-container .md-requirements .legend {
+  list-style-type: none;
+  line-height: 20px;
+  padding-left: 0;
+}
+
+.sub-pages-container .md-requirements .legend .req {
+  float: left;
+  margin-right: 20px;
+}
 
 .sub-pages-container .image-api-table td:first-child {
   font-family: monospace;
