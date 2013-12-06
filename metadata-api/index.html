@@ -970,10 +970,12 @@
               detail below.
             </p>
             <p>
-              If the IIIF Image API is available for the image, then a link to the service's endpoint should be included. The endpoint
-              is the URI up to the identifier, but not including the trailing slash character or any of the subsequent parameters. The
-              profile of the service should be the supported conformance level, and the additional fields from the Image API info
-              document may be included in this JSON object to avoid requiring it to be downloaded separately.
+              If the <a href="http://www-sul.stanford.edu/iiif/image-api" target="_blank">IIIF Image API</a> is available for
+              the image, then a link to the service's endpoint should be included. The endpoint is the URI up to the identifier, but not
+              including the trailing slash character or any of the subsequent parameters. The profile of the service should be the
+              supported conformance level, and the additional fields from the
+              <a href="http://www-sul.stanford.edu/iiif/image-api/1.1/#info" target="_blank">Image API info document</a> may be
+              included in this JSON object to avoid requiring it to be downloaded separately.
             </p>
             <p>
               Additional features of the Open Annotation data model may also be used, such as selecting a segment of the Canvas or
@@ -1039,8 +1041,9 @@
               Please note the different types and formats for the Content resources. The format should be the media type that is
               returned when the resource is deferenced. For resources that are displayed as part of the facsimile (such as images,
               text transcriptions, performances of music from the manuscript and so forth) the motivation must be "sc:painting". The
-              type should be taken from this list in the Open Annotation specification, or a similar well-known resource type
-              ontology.
+              type should be taken from this
+              <a href="http://www.openannotation.org/spec/core/core.html#BodyTargetType" target="_blank">list in the Open Annotation specification</a>,
+              or a similar well-known resource type ontology.
             </p>
 
 <p class="code-block multi-line-code">{
@@ -1108,21 +1111,23 @@
             <ul>
               <li>
                 <p>
-                  Segments of both Images and Canvases may be easily selected by adding a rectangular bounding box after the URI. The
-                  fragment must be structured:
+                  Segments of both Images and Canvases may be easily selected by adding a
+                  <a href="http://www.w3.org/TR/media-frags/#naming-space" target="_blank">rectangular bounding box </a>after the
+                  URI. The fragment must be structured:
                 </p>
                 <p class="code-block">
                   http://www.example.com/iiif/book1/canvas/p1.json#xywh=100,100,300,50
                 </p>
                 <p>
-                  Where the four numbers are the x and y coordinates in the image or canvas, followed by the width and height. Thus this
-                  segment is 300px wide, 50px high and starts at position 100,100. Note that only integers are allowed, and this may limit
-                  accuracy of assignment to canvases with small dimensions.
+                  Where the four numbers are the x and y coordinates in the image or canvas, followed by the width and height.
+                  Thus this segment is 300px wide, 50px high and starts at position 100,100. Note that only integers are allowed, and
+                  this may limit accuracy of assignment to canvases with small dimensions.
                 </p>
               </li>
               <li>
                 <p>
-                  Segments of XML files may be extracted with XPaths. The fragment must be structured:
+                  Segments of XML files may be extracted with <a href="http://en.wikipedia.org/wiki/XPointer" target="_blank">XPaths</a>.
+                  The fragment must be structured:
                 </p>
                 <p class="code-block">
                   http://www.example.com/iiif/book1/res/tei.xml#xpointer(/path/to/element)
@@ -1203,7 +1208,8 @@
             </p>
             <p>
               The same construction can be applied to a choice between other types of resources as well. This is described in the
-              Multiplicity section of the Open Annotation specification.
+              <a href="http://www.openannotation.org/spec/core/multiplicity.html#Choice" target="_blank">Multiplicity section</a> of
+              the Open Annotation specification.
             </p>
             <p>
               The item's identifier may be "rdf:nil". This means that a valid option is not to display anything. This must NOT have a
@@ -1214,7 +1220,7 @@
               This may be used to model foldouts and other dynamic features of a page, by associating images of the different states
               with the Canvas. Depending on the nature of the images, this can be either done such that the entire image is switched
               to change state, or only the section of the image that has to change if the segment information is known. For further
-              information, please see this use case document.
+              information, please see this <a href="http://www.shared-canvas.org/datamodel/iiif/usecases/foldouts.html" target="_blank">use case document</a>.
             </p>
 
 <p class="code-block multi-line-code">{
@@ -1366,8 +1372,8 @@
             <p>
               For annotations which are comments about the Canvas, as opposed to painting content resources on to the Canvas, there
               are different types of motivation to make the distinction clear. For Annotations about the content (such as comments,
-              notes, descriptions etc.) the motivation should be "oa:commenting", but may be any from the list given in the Open
-              Annotation specification.
+              notes, descriptions etc.) the motivation should be "oa:commenting", but may be any from the list given in the
+              <a href="http://www.openannotation.org/spec/core/core.html#Motivations" target="_blank">Open Annotation specification</a>.
             </p>
 
 <p class="code-block multi-line-code">{
