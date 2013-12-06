@@ -632,23 +632,28 @@ a.button-turquoise {
 }
 
 .req {
-  border-radius: 10px;
+  background: transparent url('/img/metadata-api/icons-metadata-requirements.png') left top no-repeat;
   height: 20px;
   margin: 0 auto;
   width: 20px;
 }
 
 .mandatory {
-  background-color: #c0392b;
+  background-position: 0 0;
 }
 
 .recommended {
-  background-color: #27b161;
+  background-position: -20px 0;
 }
 
 .optional {
-  background-color: #95a5a6;
+  background-position: 0 -20px;
 }
+
+.not-applicable {
+  background-position: -20px -20px;
+}
+
 
 /* Footer */
 
