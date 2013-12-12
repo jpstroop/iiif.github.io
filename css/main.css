@@ -142,7 +142,7 @@ nav a:hover {
 a.button-turquoise {
   background-color: #00bc99;
   border: 0;
-  border-bottom: 3px solid #2e8b74;
+  border-bottom: 3px solid #2e8b74 !important;
   border-radius: 4px;
   color: #fff;
   display: block;
@@ -642,7 +642,6 @@ a.button-turquoise {
   border-radius: 3px;
   display: inline-block;
   font-family: monospace;
-  font-size: 13px;
   line-height: 1.6;
   margin: 0;
   padding: 4px 12px;
