@@ -326,6 +326,13 @@ a.button-turquoise {
 
 /*==== MOBILE: Sub pages : Common styles ====*/
 
+.sub-pages-container a:link,
+.sub-pages-container a:visited,
+.sub-pages-container a:hover,
+.sub-pages-container a:active {
+  border-bottom: 1px dotted #2e8b74;
+}
+
 .sub-pages-container article section {
   margin-bottom: 4em;
 }
@@ -438,6 +445,25 @@ a.button-turquoise {
   margin-left: 20px;
 }
 
+.sub-pages-container .image-api,
+.sub-pages-container .metadata-api {
+  color: #222;
+}
+
+
+.sub-pages-container .image-api .names,
+.sub-pages-container .metadata-api .names {
+  list-style-type: none;
+  margin: 1em 0 0 0;
+  padding-left: 20px;
+}
+
+.sub-pages-container .image-api .names li,
+.sub-pages-container .metadata-api .names li {
+  line-height: 1.4;
+  padding-left: 0;
+}
+
 .sub-pages-container .image-api .editors-authors sup,
 .sub-pages-container .metadata-api .editors-authors sup {
   color: #999;
@@ -476,7 +502,7 @@ a.button-turquoise {
 .sub-pages-container .image-api-table tr {
   border-top: 1px solid #2e8b74;
   border-bottom: 1px solid #2e8b74;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .sub-pages-container .image-api-table th {
@@ -611,8 +637,8 @@ a.button-turquoise {
 }
 
 .code-block {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
+  background-color: #e0efef;
+  border: 1px solid #c0d3d3;
   border-radius: 3px;
   display: inline-block;
   font-family: monospace;
