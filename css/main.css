@@ -710,6 +710,15 @@ a.button-turquoise {
   background-position: -20px -20px;
 }
 
+.sub-rh {
+  background-color:#DCF4EE;
+  font-weight: bold;
+}
+
+.compliance-tick {
+  color: #2E8B74;
+  text-align: center;
+}
 
 /* Footer */
 
