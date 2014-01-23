@@ -480,6 +480,22 @@ a.button-turquoise {
   color: #999;
 }
 
+.sub-pages-container .image-api section,
+.sub-pages-container .metadata-api section {
+  margin-bottom: 2.5em;
+}
+
+.sub-pages-container .image-api section h2,
+.sub-pages-container .metadata-api section h2 {
+  font-size: 24px;
+}
+
+.sub-pages-container .image-api section h3,
+.sub-pages-container .metadata-api section h3 {
+  font-size: 21px;
+}
+
+
 .sub-pages-container .toc ol {
   counter-reset: item;
   margin: 0;
