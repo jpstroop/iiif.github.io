@@ -1,14 +1,20 @@
+// on document ready
+$(function() {
+  interactiveImg.render();
+});
+
 
 var interactiveImg = (function() {
   var frameHeight,
       frameWidth,
       ddOptions = {},
+      elIiifContainer = $('.main-interactive-image .container-image'),
       elIiifImg = $('.main-interactive-image .container-image img'),
       elTryItRegion = $('.try-it-region'),
       elTryItSize = $('.try-it-size'),
       elTryItRotation = $('.try-it-rotation');
 
-  // BL Image, 5213 x 5706
+  // BL's image (5213 x 5706) accessioned at Stanford
   var iiifImg = {
         baseUrl: 'http://stacks.stanford.edu/image/iiif/ff139pd0160%252FK90113-43',
         region: 'full',
@@ -152,8 +158,8 @@ var interactiveImg = (function() {
 
 
   function calculateFrameDimensions() {
-    frameHeight = $('.main-interactive-image .container-image').height();
-    frameWidth  = $('.main-interactive-image .container-image').width();
+    frameHeight = elIiifContainer.height();
+    frameWidth  = elIiifContainer.width();
   }
 
 
@@ -203,6 +209,7 @@ var interactiveImg = (function() {
     var cutoff = 50;
 
     value = value - (value % cutoff);
+
     return (value < cutoff) ? cutoff : value;
   }
 
@@ -213,8 +220,3 @@ var interactiveImg = (function() {
   };
 
 })();
-
-// on document ready
-$(function() {
-  interactiveImg.render();
-});
